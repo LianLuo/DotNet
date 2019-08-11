@@ -22,7 +22,7 @@ namespace WorkTools.UI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.ThreadException += Application_ThreadException;
-            Application.Run(new MainView());
+            Application.Run(new OCRView());
         }
 
         private static void Application_ThreadException(object sender, System.Threading.ThreadExceptionEventArgs e)

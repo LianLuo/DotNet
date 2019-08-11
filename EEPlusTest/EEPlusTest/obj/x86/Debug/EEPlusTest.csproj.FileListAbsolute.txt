@@ -1,0 +1,7 @@
+G:\Orginal_Csharp\DotNet\EEPlusTest\EEPlusTest\bin\Debug\EEPlusTest.exe
+G:\Orginal_Csharp\DotNet\EEPlusTest\EEPlusTest\bin\Debug\EEPlusTest.pdb
+G:\Orginal_Csharp\DotNet\EEPlusTest\EEPlusTest\obj\x86\Debug\EEPlusTest.exe
+G:\Orginal_Csharp\DotNet\EEPlusTest\EEPlusTest\obj\x86\Debug\EEPlusTest.pdb
+G:\Orginal_Csharp\DotNet\EEPlusTest\EEPlusTest\bin\Debug\EPPlus.dll
+G:\Orginal_Csharp\DotNet\EEPlusTest\EEPlusTest\bin\Debug\EPPlus.xml
+G:\Orginal_Csharp\DotNet\EEPlusTest\EEPlusTest\obj\x86\Debug\EEPlusTest.csprojResolveAssemblyReference.cache
