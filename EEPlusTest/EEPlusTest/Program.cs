@@ -8,16 +8,35 @@ using System.Drawing;
 using OfficeOpenXml.Drawing;
 using OfficeOpenXml.Drawing.Chart;
 using OfficeOpenXml.Style;
+using Autofac;
 
 namespace EEPlusTest
 {
     class Program
     {
+        private static IContainer container { get; set; }
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, Wrold!");
-            EEPlusTest.EEPlus ep = new EEPlus();
-            ep.CreateXlsx("C:/2.xlsx", SetExcelChartDemo);
+            var builder = new ContainerBuilder();
+            builder.RegisterType<ConsoleOutput>().As<IOutput>();
+            builder.RegisterType<TodayWriter>().As<IDateWriter>();
+            builder.RegisterType<SayHi>().As<IOutputHello>();
+            container = builder.Build();
+            WriteDate();
+        }
+
+        private static void WriteDate()
+        {
+            // create the scope, resolve your IDateWriter.
+            // use it, then dispose of the scope.
+            using (var scope = container.BeginLifetimeScope())
+            {
+                var say = scope.Resolve<IOutputHello>();
+                say.SayHello();
+
+                var writer = scope.Resolve<IDateWriter>();
+                writer.WriteDate();
+            }
         }
 
         private static void SetExcelStyle(ExcelPackage package)

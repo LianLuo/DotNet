@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A28744AB-D136-485C-B649-E05171F5E914}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CronSoft.UI</RootNamespace>
+    <AssemblyName>CronSoft.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IHandler.cs" />
+    <Compile Include="MainView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainView.Designer.cs">
+      <DependentUpon>MainView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserViews\TabDayView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserViews\TabDayView.Designer.cs">
+      <DependentUpon>TabDayView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserViews\TabHourView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserViews\TabHourView.Designer.cs">
+      <DependentUpon>TabHourView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserViews\TabMinsView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserViews\TabMinsView.Designer.cs">
+      <DependentUpon>TabMinsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserViews\TabMonthView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserViews\TabMonthView.Designer.cs">
+      <DependentUpon>TabMonthView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserViews\TabSecondView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserViews\TabSecondView.Designer.cs">
+      <DependentUpon>TabSecondView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserViews\TabWeekView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserViews\TabWeekView.Designer.cs">
+      <DependentUpon>TabWeekView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserViews\TabYearView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserViews\TabYearView.Designer.cs">
+      <DependentUpon>TabYearView.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="MainView.resx">
+      <DependentUpon>MainView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UserViews\TabDayView.resx">
+      <DependentUpon>TabDayView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserViews\TabHourView.resx">
+      <DependentUpon>TabHourView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserViews\TabMinsView.resx">
+      <DependentUpon>TabMinsView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserViews\TabMonthView.resx">
+      <DependentUpon>TabMonthView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserViews\TabSecondView.resx">
+      <DependentUpon>TabSecondView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserViews\TabWeekView.resx">
+      <DependentUpon>TabWeekView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserViews\TabYearView.resx">
+      <DependentUpon>TabYearView.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,14 @@
+G:\Orginal_Csharp\DotNet\CronSoft\CronSoft.UI\obj\x86\Debug\CronSoft.UI.MainView.resources
+G:\Orginal_Csharp\DotNet\CronSoft\CronSoft.UI\obj\x86\Debug\CronSoft.UI.Properties.Resources.resources
+G:\Orginal_Csharp\DotNet\CronSoft\CronSoft.UI\obj\x86\Debug\CronSoft.UI.UserViews.TabDayView.resources
+G:\Orginal_Csharp\DotNet\CronSoft\CronSoft.UI\obj\x86\Debug\CronSoft.UI.UserViews.TabHourView.resources
+G:\Orginal_Csharp\DotNet\CronSoft\CronSoft.UI\obj\x86\Debug\CronSoft.UI.UserViews.TabMinsView.resources
+G:\Orginal_Csharp\DotNet\CronSoft\CronSoft.UI\obj\x86\Debug\CronSoft.UI.UserViews.TabMonthView.resources
+G:\Orginal_Csharp\DotNet\CronSoft\CronSoft.UI\obj\x86\Debug\CronSoft.UI.UserViews.TabSecondView.resources
+G:\Orginal_Csharp\DotNet\CronSoft\CronSoft.UI\obj\x86\Debug\CronSoft.UI.UserViews.TabWeekView.resources
+G:\Orginal_Csharp\DotNet\CronSoft\CronSoft.UI\obj\x86\Debug\CronSoft.UI.UserViews.TabYearView.resources
+G:\Orginal_Csharp\DotNet\CronSoft\CronSoft.UI\obj\x86\Debug\CronSoft.UI.csproj.GenerateResource.Cache
+G:\Orginal_Csharp\DotNet\CronSoft\CronSoft.UI\bin\Debug\CronSoft.UI.exe
+G:\Orginal_Csharp\DotNet\CronSoft\CronSoft.UI\bin\Debug\CronSoft.UI.pdb
+G:\Orginal_Csharp\DotNet\CronSoft\CronSoft.UI\obj\x86\Debug\CronSoft.UI.exe
+G:\Orginal_Csharp\DotNet\CronSoft\CronSoft.UI\obj\x86\Debug\CronSoft.UI.pdb
