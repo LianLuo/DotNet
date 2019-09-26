@@ -55,6 +55,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserViews\BaseView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UserViews\TabDayView.cs">
       <SubType>UserControl</SubType>
     </Compile>

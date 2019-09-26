@@ -56,12 +56,24 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabSecondView1 = new CronSoft.UI.UserViews.TabSecondView();
+            this.tabMinsView1 = new CronSoft.UI.UserViews.TabMinsView();
+            this.tabHourView1 = new CronSoft.UI.UserViews.TabHourView();
+            this.tabDayView1 = new CronSoft.UI.UserViews.TabDayView();
+            this.tabMonthView1 = new CronSoft.UI.UserViews.TabMonthView();
+            this.tabWeekView1 = new CronSoft.UI.UserViews.TabWeekView();
+            this.tabYearView1 = new CronSoft.UI.UserViews.TabYearView();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.Panel2.SuspendLayout();
             this.splitContainer.SuspendLayout();
             this.tabMain.SuspendLayout();
             this.tabSecond.SuspendLayout();
+            this.tabMins.SuspendLayout();
+            this.tabHour.SuspendLayout();
+            this.tabDay.SuspendLayout();
+            this.tabMonth.SuspendLayout();
+            this.tabWeek.SuspendLayout();
+            this.tabYear.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer
@@ -128,6 +140,7 @@
             // 
             // tabMins
             // 
+            this.tabMins.Controls.Add(this.tabMinsView1);
             this.tabMins.Location = new System.Drawing.Point(4, 22);
             this.tabMins.Name = "tabMins";
             this.tabMins.Padding = new System.Windows.Forms.Padding(3);
@@ -138,6 +151,7 @@
             // 
             // tabHour
             // 
+            this.tabHour.Controls.Add(this.tabHourView1);
             this.tabHour.Location = new System.Drawing.Point(4, 22);
             this.tabHour.Name = "tabHour";
             this.tabHour.Padding = new System.Windows.Forms.Padding(3);
@@ -148,6 +162,7 @@
             // 
             // tabDay
             // 
+            this.tabDay.Controls.Add(this.tabDayView1);
             this.tabDay.Location = new System.Drawing.Point(4, 22);
             this.tabDay.Name = "tabDay";
             this.tabDay.Padding = new System.Windows.Forms.Padding(3);
@@ -158,6 +173,7 @@
             // 
             // tabMonth
             // 
+            this.tabMonth.Controls.Add(this.tabMonthView1);
             this.tabMonth.Location = new System.Drawing.Point(4, 22);
             this.tabMonth.Name = "tabMonth";
             this.tabMonth.Padding = new System.Windows.Forms.Padding(3);
@@ -168,6 +184,7 @@
             // 
             // tabWeek
             // 
+            this.tabWeek.Controls.Add(this.tabWeekView1);
             this.tabWeek.Location = new System.Drawing.Point(4, 22);
             this.tabWeek.Name = "tabWeek";
             this.tabWeek.Padding = new System.Windows.Forms.Padding(3);
@@ -178,6 +195,7 @@
             // 
             // tabYear
             // 
+            this.tabYear.Controls.Add(this.tabYearView1);
             this.tabYear.Location = new System.Drawing.Point(4, 22);
             this.tabYear.Name = "tabYear";
             this.tabYear.Padding = new System.Windows.Forms.Padding(3);
@@ -360,6 +378,48 @@
             this.tabSecondView1.Size = new System.Drawing.Size(683, 284);
             this.tabSecondView1.TabIndex = 0;
             // 
+            // tabMinsView1
+            // 
+            this.tabMinsView1.Location = new System.Drawing.Point(0, 1);
+            this.tabMinsView1.Name = "tabMinsView1";
+            this.tabMinsView1.Size = new System.Drawing.Size(683, 284);
+            this.tabMinsView1.TabIndex = 0;
+            // 
+            // tabHourView1
+            // 
+            this.tabHourView1.Location = new System.Drawing.Point(-1, 0);
+            this.tabHourView1.Name = "tabHourView1";
+            this.tabHourView1.Size = new System.Drawing.Size(683, 284);
+            this.tabHourView1.TabIndex = 0;
+            // 
+            // tabDayView1
+            // 
+            this.tabDayView1.Location = new System.Drawing.Point(-1, 0);
+            this.tabDayView1.Name = "tabDayView1";
+            this.tabDayView1.Size = new System.Drawing.Size(683, 284);
+            this.tabDayView1.TabIndex = 0;
+            // 
+            // tabMonthView1
+            // 
+            this.tabMonthView1.Location = new System.Drawing.Point(0, 3);
+            this.tabMonthView1.Name = "tabMonthView1";
+            this.tabMonthView1.Size = new System.Drawing.Size(683, 284);
+            this.tabMonthView1.TabIndex = 0;
+            // 
+            // tabWeekView1
+            // 
+            this.tabWeekView1.Location = new System.Drawing.Point(1, 1);
+            this.tabWeekView1.Name = "tabWeekView1";
+            this.tabWeekView1.Size = new System.Drawing.Size(683, 284);
+            this.tabWeekView1.TabIndex = 0;
+            // 
+            // tabYearView1
+            // 
+            this.tabYearView1.Location = new System.Drawing.Point(1, 0);
+            this.tabYearView1.Name = "tabYearView1";
+            this.tabYearView1.Size = new System.Drawing.Size(683, 284);
+            this.tabYearView1.TabIndex = 0;
+            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -375,6 +435,12 @@
             this.splitContainer.ResumeLayout(false);
             this.tabMain.ResumeLayout(false);
             this.tabSecond.ResumeLayout(false);
+            this.tabMins.ResumeLayout(false);
+            this.tabHour.ResumeLayout(false);
+            this.tabDay.ResumeLayout(false);
+            this.tabMonth.ResumeLayout(false);
+            this.tabWeek.ResumeLayout(false);
+            this.tabYear.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -409,6 +475,12 @@
         private System.Windows.Forms.Label lab1;
         private System.Windows.Forms.Button btnRun;
         private UserViews.TabSecondView tabSecondView1;
+        private UserViews.TabMinsView tabMinsView1;
+        private UserViews.TabHourView tabHourView1;
+        private UserViews.TabDayView tabDayView1;
+        private UserViews.TabMonthView tabMonthView1;
+        private UserViews.TabWeekView tabWeekView1;
+        private UserViews.TabYearView tabYearView1;
     }
 }
 

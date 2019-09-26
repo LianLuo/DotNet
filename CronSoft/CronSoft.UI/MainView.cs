@@ -18,6 +18,31 @@ namespace CronSoft.UI
             {
                 SetTextBoxCtrl(tbSecond, msg);
             };
+            tabMinsView1.SetTextBoxHandler += (msg) =>
+            {
+                SetTextBoxCtrl(tbMins, msg);
+            };
+            tabHourView1.SetTextBoxHandler += (msg) =>
+            {
+                SetTextBoxCtrl(tbHour, msg);
+            };
+            tabDayView1.SetTextBoxHandler += (msg) =>
+            {
+                SetTextBoxCtrl(tbDay, msg);
+            };
+            tabMonthView1.SetTextBoxHandler += (msg) =>
+            {
+                SetTextBoxCtrl(tbMonth, msg);
+            };
+            tabWeekView1.SetTextBoxHandler += (msg) =>
+            {
+                SetTextBoxCtrl(tbWeek, msg);
+            };
+            tabYearView1.SetTextBoxHandler += (msg) =>
+            {
+                SetTextBoxCtrl(tbYear, msg);
+            };
+
         }
 
         private delegate void SetTextBoxValueHandler(string msg);
