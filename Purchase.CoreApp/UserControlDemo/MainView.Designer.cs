@@ -51,6 +51,7 @@
             this.button12 = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panelContainer = new System.Windows.Forms.Panel();
+            this.btnClose = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -83,6 +84,7 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.btnBack);
             this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Controls.Add(this.btnClose);
             this.panel2.Controls.Add(this.button12);
             this.panel2.Controls.Add(this.button11);
             this.panel2.Controls.Add(this.pictureBox3);
@@ -290,7 +292,7 @@
             this.button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button12.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.button12.Location = new System.Drawing.Point(677, 7);
+            this.button12.Location = new System.Drawing.Point(636, 7);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(89, 25);
             this.button12.TabIndex = 2;
@@ -300,7 +302,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(798, 0);
+            this.pictureBox3.Location = new System.Drawing.Point(757, 0);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(41, 38);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -314,6 +316,21 @@
             this.panelContainer.Name = "panelContainer";
             this.panelContainer.Size = new System.Drawing.Size(848, 511);
             this.panelContainer.TabIndex = 2;
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.White;
+            this.btnClose.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClose.BackgroundImage")));
+            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnClose.Location = new System.Drawing.Point(807, 4);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(38, 33);
+            this.btnClose.TabIndex = 2;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // MainView
             // 
@@ -363,6 +380,7 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel panelContainer;
+        private System.Windows.Forms.Button btnClose;
     }
 }
 
