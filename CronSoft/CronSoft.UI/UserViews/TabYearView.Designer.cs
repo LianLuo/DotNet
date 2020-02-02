@@ -48,6 +48,7 @@
             this.btnRadio_Year1.TabStop = true;
             this.btnRadio_Year1.Text = "不指定 允许的通配符[, - * /] 非必填";
             this.btnRadio_Year1.UseVisualStyleBackColor = true;
+            this.btnRadio_Year1.Click += new System.EventHandler(this.btnRadio_Year1_Click);
             // 
             // btnRadio_Year2
             // 
@@ -58,6 +59,7 @@
             this.btnRadio_Year2.TabIndex = 2;
             this.btnRadio_Year2.Text = "每年";
             this.btnRadio_Year2.UseVisualStyleBackColor = true;
+            this.btnRadio_Year2.Click += new System.EventHandler(this.btnRadio_Year2_Click);
             // 
             // btnRadio_Year3
             // 
@@ -68,6 +70,7 @@
             this.btnRadio_Year3.TabIndex = 3;
             this.btnRadio_Year3.Text = "周期从           -        ";
             this.btnRadio_Year3.UseVisualStyleBackColor = true;
+            this.btnRadio_Year3.Click += new System.EventHandler(this.btnRadio_Year3_Click);
             // 
             // fromYear
             // 
@@ -90,6 +93,7 @@
             0,
             0,
             0});
+            this.fromYear.ValueChanged += new System.EventHandler(this.fromYear_ValueChanged);
             // 
             // toYear
             // 
@@ -112,6 +116,7 @@
             0,
             0,
             0});
+            this.toYear.ValueChanged += new System.EventHandler(this.toYear_ValueChanged);
             // 
             // TabYearView
             // 

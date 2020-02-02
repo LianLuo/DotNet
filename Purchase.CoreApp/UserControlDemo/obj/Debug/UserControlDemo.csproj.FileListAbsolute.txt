@@ -1,0 +1,11 @@
+G:\Orginal_Csharp\DotNet\Purchase.CoreApp\UserControlDemo\bin\Debug\UserControlDemo.exe.config
+G:\Orginal_Csharp\DotNet\Purchase.CoreApp\UserControlDemo\bin\Debug\UserControlDemo.exe
+G:\Orginal_Csharp\DotNet\Purchase.CoreApp\UserControlDemo\bin\Debug\UserControlDemo.pdb
+G:\Orginal_Csharp\DotNet\Purchase.CoreApp\UserControlDemo\obj\Debug\UserControlDemo.csprojAssemblyReference.cache
+G:\Orginal_Csharp\DotNet\Purchase.CoreApp\UserControlDemo\obj\Debug\UserControlDemo.MainView.resources
+G:\Orginal_Csharp\DotNet\Purchase.CoreApp\UserControlDemo\obj\Debug\UserControlDemo.Properties.Resources.resources
+G:\Orginal_Csharp\DotNet\Purchase.CoreApp\UserControlDemo\obj\Debug\UserControlDemo.UCHome.resources
+G:\Orginal_Csharp\DotNet\Purchase.CoreApp\UserControlDemo\obj\Debug\UserControlDemo.UCNext.resources
+G:\Orginal_Csharp\DotNet\Purchase.CoreApp\UserControlDemo\obj\Debug\UserControlDemo.csproj.GenerateResource.cache
+G:\Orginal_Csharp\DotNet\Purchase.CoreApp\UserControlDemo\obj\Debug\UserControlDemo.exe
+G:\Orginal_Csharp\DotNet\Purchase.CoreApp\UserControlDemo\obj\Debug\UserControlDemo.pdb

@@ -1,0 +1,9 @@
+G:\Orginal_Csharp\DotNet\Purchase.CoreApp\SkypeDemo\bin\Debug\SkypeDemo.exe.config
+G:\Orginal_Csharp\DotNet\Purchase.CoreApp\SkypeDemo\bin\Debug\SkypeDemo.exe
+G:\Orginal_Csharp\DotNet\Purchase.CoreApp\SkypeDemo\bin\Debug\SkypeDemo.pdb
+G:\Orginal_Csharp\DotNet\Purchase.CoreApp\SkypeDemo\obj\Debug\SkypeDemo.MainView.resources
+G:\Orginal_Csharp\DotNet\Purchase.CoreApp\SkypeDemo\obj\Debug\SkypeDemo.Properties.Resources.resources
+G:\Orginal_Csharp\DotNet\Purchase.CoreApp\SkypeDemo\obj\Debug\SkypeDemo.csproj.GenerateResource.cache
+G:\Orginal_Csharp\DotNet\Purchase.CoreApp\SkypeDemo\obj\Debug\SkypeDemo.exe
+G:\Orginal_Csharp\DotNet\Purchase.CoreApp\SkypeDemo\obj\Debug\SkypeDemo.pdb
+G:\Orginal_Csharp\DotNet\Purchase.CoreApp\SkypeDemo\obj\Debug\SkypeDemo.UserControllers.UCContract.resources

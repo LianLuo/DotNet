@@ -76,6 +76,7 @@
             this.btnRadio_Month2.TabIndex = 1;
             this.btnRadio_Month2.Text = "不指定";
             this.btnRadio_Month2.UseVisualStyleBackColor = true;
+            this.btnRadio_Month2.Click += new System.EventHandler(this.btnRadio_Month2_Click);
             // 
             // btnRadio_Month3
             // 
@@ -86,6 +87,7 @@
             this.btnRadio_Month3.TabIndex = 2;
             this.btnRadio_Month3.Text = "周期从          -          月";
             this.btnRadio_Month3.UseVisualStyleBackColor = true;
+            this.btnRadio_Month3.Click += new System.EventHandler(this.btnRadio_Month3_Click);
             // 
             // btnRadio_Month4
             // 
@@ -96,6 +98,7 @@
             this.btnRadio_Month4.TabIndex = 3;
             this.btnRadio_Month4.Text = "从          日开始，每          月执行一次";
             this.btnRadio_Month4.UseVisualStyleBackColor = true;
+            this.btnRadio_Month4.Click += new System.EventHandler(this.btnRadio_Month4_Click);
             // 
             // btnRadio_Month5
             // 
@@ -106,6 +109,7 @@
             this.btnRadio_Month5.TabIndex = 4;
             this.btnRadio_Month5.Text = "指定";
             this.btnRadio_Month5.UseVisualStyleBackColor = true;
+            this.btnRadio_Month5.Click += new System.EventHandler(this.btnRadio_Month5_Click);
             // 
             // cb1
             // 
@@ -302,7 +306,7 @@
             0,
             0});
             this.toMonth.Minimum = new decimal(new int[] {
-            1,
+            2,
             0,
             0,
             0});
@@ -310,7 +314,7 @@
             this.toMonth.Size = new System.Drawing.Size(44, 21);
             this.toMonth.TabIndex = 46;
             this.toMonth.Value = new decimal(new int[] {
-            1,
+            2,
             0,
             0,
             0});
@@ -342,6 +346,7 @@
             this.Controls.Add(this.btnRadio_Month1);
             this.Name = "TabMonthView";
             this.Size = new System.Drawing.Size(683, 284);
+            this.Click += new System.EventHandler(this.TabMonthView_Click);
             ((System.ComponentModel.ISupportInitialize)(this.startMonth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.perMonth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fromMonth)).EndInit();

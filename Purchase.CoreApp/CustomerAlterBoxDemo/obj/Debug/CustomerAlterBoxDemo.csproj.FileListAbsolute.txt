@@ -1,0 +1,10 @@
+G:\Orginal_Csharp\DotNet\Purchase.CoreApp\CustomerAlterBoxDemo\bin\Debug\CustomerAlterBoxDemo.exe.config
+G:\Orginal_Csharp\DotNet\Purchase.CoreApp\CustomerAlterBoxDemo\bin\Debug\CustomerAlterBoxDemo.exe
+G:\Orginal_Csharp\DotNet\Purchase.CoreApp\CustomerAlterBoxDemo\bin\Debug\CustomerAlterBoxDemo.pdb
+G:\Orginal_Csharp\DotNet\Purchase.CoreApp\CustomerAlterBoxDemo\obj\Debug\CustomerAlterBoxDemo.csprojAssemblyReference.cache
+G:\Orginal_Csharp\DotNet\Purchase.CoreApp\CustomerAlterBoxDemo\obj\Debug\CustomerAlterBoxDemo.MainView.resources
+G:\Orginal_Csharp\DotNet\Purchase.CoreApp\CustomerAlterBoxDemo\obj\Debug\CustomerAlterBoxDemo.Form_Alter.resources
+G:\Orginal_Csharp\DotNet\Purchase.CoreApp\CustomerAlterBoxDemo\obj\Debug\CustomerAlterBoxDemo.Properties.Resources.resources
+G:\Orginal_Csharp\DotNet\Purchase.CoreApp\CustomerAlterBoxDemo\obj\Debug\CustomerAlterBoxDemo.csproj.GenerateResource.cache
+G:\Orginal_Csharp\DotNet\Purchase.CoreApp\CustomerAlterBoxDemo\obj\Debug\CustomerAlterBoxDemo.exe
+G:\Orginal_Csharp\DotNet\Purchase.CoreApp\CustomerAlterBoxDemo\obj\Debug\CustomerAlterBoxDemo.pdb
