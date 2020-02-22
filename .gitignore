@@ -1,0 +1,17 @@
+## ignore this file##
+*.exe
+*.pdb
+.dockerignore
+.idea
+.project
+.settings
+*.txt
+/Purchase.CoreApp/ResizableDemo/bin
+/Purchase.CoreApp/ResizableDemo/obj
+/Purchase.CoreApp/RecordScreenDemo/bin
+/Purchase.CoreApp/RecordScreenDemo/obj
+/Purchase.CoreApp/Purchase.CoreApp/obj
+/Purchase.CoreApp/Purchase.CoreApp/bin
+/Purchase.CoreApp/ElipseTool/bin
+/Purchase.CoreApp/ElipseTool/obj
+/Purchase.CoreApp/packages
