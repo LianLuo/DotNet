@@ -68,5 +68,10 @@ namespace UserControlDemo
             this.panelContainer.Controls["UCHome"].BringToFront();
             btnBack.Visible = false;
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
