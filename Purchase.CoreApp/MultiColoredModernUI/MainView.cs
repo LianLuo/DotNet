@@ -20,6 +20,7 @@ namespace MultiColoredModernUI
         {
             random = new Random();
             InitializeComponent();
+            btnCloseChild.Visible = false;
         }
 
         private Color SelectThemeColor()
@@ -50,6 +51,7 @@ namespace MultiColoredModernUI
                     panelLogo.BackColor = ThemeColor.ChangeColorBrightness(color, -0.3);
                     ThemeColor.PrimaryColor = color;
                     ThemeColor.SecondaryColor = ThemeColor.ChangeColorBrightness(color, -0.3);
+                    btnCloseChild.Visible = true;
                 }
             }
         }
@@ -113,6 +115,25 @@ namespace MultiColoredModernUI
         private void btnSetting_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Forms.UCSetting(), sender);
+        }
+
+        private void btnCloseChild_Click(object sender, EventArgs e)
+        {
+            if(null != activeForm)
+            {
+                activeForm.Close();
+            }
+            Reset();
+        }
+
+        private void Reset()
+        {
+            DisabledButton();
+            lbTitle.Text = "HOME";
+            panelTitleBar.BackColor = Color.FromArgb(0, 150, 136);
+            panelLogo.BackColor = Color.FromArgb(39, 38, 60);
+            currentButton = null;
+            btnCloseChild.Visible = false;
         }
     }
 }

@@ -197,7 +197,8 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
-            this.Name = "UCProducts";
+            this.Name = "UCOrder";
+            this.Text = "Order";
             this.Size = new System.Drawing.Size(742, 457);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

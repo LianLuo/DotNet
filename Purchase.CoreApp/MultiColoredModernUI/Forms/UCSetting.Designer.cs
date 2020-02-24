@@ -199,6 +199,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Name = "UCSetting";
+            this.Text = "Setting";
             this.Load += new System.EventHandler(this.UCSetting_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

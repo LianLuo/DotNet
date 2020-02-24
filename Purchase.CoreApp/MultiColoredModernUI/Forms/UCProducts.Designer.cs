@@ -199,6 +199,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Name = "UCProducts";
+            this.Text = "Products";
             this.Load += new System.EventHandler(this.UCProducts_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
