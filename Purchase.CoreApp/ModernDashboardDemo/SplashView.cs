@@ -20,15 +20,10 @@ namespace ModernDashboardDemo
         private int move = 2;
         private void timer1_Tick(object sender, EventArgs e)
         {
-            panelSide.Left += 2;
+            panelSide.Left += move;
             if (panelSide.Left > 230)
             {
                 panelSide.Left = 0;
-            }
-
-            if (panelSide.Left < 0)
-            {
-                move = 2;
             }
         }
 
