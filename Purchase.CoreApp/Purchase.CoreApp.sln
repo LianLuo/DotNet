@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DropdownPanelDemo", "Dropdo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookShopDemo", "BookShopDemo\BookShopDemo.csproj", "{CAC43444-21EA-4395-B59C-E347F857BE8D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FastFoodDemo", "CircularFormDemo\FastFoodDemo.csproj", "{90DCD95A-8EF9-486E-9B35-364DB72ADEFE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -153,6 +155,14 @@ Global
 		{CAC43444-21EA-4395-B59C-E347F857BE8D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CAC43444-21EA-4395-B59C-E347F857BE8D}.Release|x86.ActiveCfg = Release|Any CPU
 		{CAC43444-21EA-4395-B59C-E347F857BE8D}.Release|x86.Build.0 = Release|Any CPU
+		{90DCD95A-8EF9-486E-9B35-364DB72ADEFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90DCD95A-8EF9-486E-9B35-364DB72ADEFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90DCD95A-8EF9-486E-9B35-364DB72ADEFE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{90DCD95A-8EF9-486E-9B35-364DB72ADEFE}.Debug|x86.Build.0 = Debug|Any CPU
+		{90DCD95A-8EF9-486E-9B35-364DB72ADEFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90DCD95A-8EF9-486E-9B35-364DB72ADEFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90DCD95A-8EF9-486E-9B35-364DB72ADEFE}.Release|x86.ActiveCfg = Release|Any CPU
+		{90DCD95A-8EF9-486E-9B35-364DB72ADEFE}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
