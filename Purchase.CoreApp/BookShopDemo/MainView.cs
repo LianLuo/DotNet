@@ -103,16 +103,19 @@ namespace BookShopDemo
         private void btnExpenses_Click(object sender, EventArgs e)
         {
             this.MoveSidePanel(this.btnExpenses);
+            this.AddControlsToPanel(new UCManageExpence());
         }
 
         private void btnUsers_Click(object sender, EventArgs e)
         {
             this.MoveSidePanel(this.btnUsers);
+            this.AddControlsToPanel(new UCManagerUser());
         }
 
         private void btnView_Click(object sender, EventArgs e)
         {
             this.MoveSidePanel(this.btnView);
+            this.AddControlsToPanel(new UCViewSales());
         }
 
         private void btnSetting_Click(object sender, EventArgs e)

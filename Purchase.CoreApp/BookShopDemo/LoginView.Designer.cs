@@ -191,9 +191,9 @@
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(91)))), ((int)(((byte)(183)))));
             this.label5.Location = new System.Drawing.Point(8, 690);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(321, 21);
+            this.label5.Size = new System.Drawing.Size(330, 21);
             this.label5.TabIndex = 1;
-            this.label5.Text = "Coryright @ 2019 All My a Revised By XXX";
+            this.label5.Text = "Coryright @ 2019 All Rights Revised By XXX";
             // 
             // button1
             // 
