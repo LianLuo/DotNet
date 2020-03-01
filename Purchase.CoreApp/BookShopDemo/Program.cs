@@ -16,7 +16,18 @@ namespace BookShopDemo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainView());
+            LoginView loginView = new LoginView();
+            try
+            {
+                if(loginView.ShowDialog() == DialogResult.OK)
+                {
+                    Application.Run(new MainView());
+                }
+            }catch(Exception e)
+            {
+
+            }
+            
         }
     }
 }
