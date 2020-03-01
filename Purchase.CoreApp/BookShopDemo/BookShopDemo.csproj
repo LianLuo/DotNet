@@ -59,6 +59,12 @@
     <Compile Include="AddCategoryView.Designer.cs">
       <DependentUpon>AddCategoryView.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddExpenseView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddExpenseView.Designer.cs">
+      <DependentUpon>AddExpenseView.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddNewBookView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +111,12 @@
     <Compile Include="UserControls\UCHome.Designer.cs">
       <DependentUpon>UCHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCManagerUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCManagerUser.Designer.cs">
+      <DependentUpon>UCManagerUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCPhurchase.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -117,8 +129,23 @@
     <Compile Include="UserControls\UCSales.Designer.cs">
       <DependentUpon>UCSales.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCManageExpence.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCManageExpence.Designer.cs">
+      <DependentUpon>UCManageExpence.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCViewSales.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCViewSales.Designer.cs">
+      <DependentUpon>UCViewSales.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddCategoryView.resx">
       <DependentUpon>AddCategoryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddExpenseView.resx">
+      <DependentUpon>AddExpenseView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddNewBookView.resx">
       <DependentUpon>AddNewBookView.cs</DependentUpon>
@@ -152,11 +179,20 @@
     <EmbeddedResource Include="UserControls\UCHome.resx">
       <DependentUpon>UCHome.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCManageExpence.resx">
+      <DependentUpon>UCManageExpence.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCManagerUser.resx">
+      <DependentUpon>UCManagerUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCPhurchase.resx">
       <DependentUpon>UCPhurchase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCSales.resx">
       <DependentUpon>UCSales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCViewSales.resx">
+      <DependentUpon>UCViewSales.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
