@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BookShopDemo.UserControls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,6 +22,8 @@ namespace BookShopDemo
             isCollapsed = false;
             this.MoveSidePanel(this.btnHome);
             this.timer2.Start();
+            this.MoveSidePanel(this.btnHome);
+            this.AddControlsToPanel(new UCHome());
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -72,19 +75,29 @@ namespace BookShopDemo
             panelHighLight.Height = btn.Height;
         }
 
+        private void AddControlsToPanel(Control c)
+        {
+            c.Dock = DockStyle.Fill;
+            this.panelDesktop.Controls.Clear();
+            this.panelDesktop.Controls.Add(c);
+        }
+
         private void btnHome_Click(object sender, EventArgs e)
         {
             this.MoveSidePanel(this.btnHome);
+            this.AddControlsToPanel(new UCHome());
         }
 
         private void btnSale_Click(object sender, EventArgs e)
         {
             this.MoveSidePanel(this.btnSale);
+            this.AddControlsToPanel(new UCSales());
         }
 
         private void btnPurchase_Click(object sender, EventArgs e)
         {
             this.MoveSidePanel(this.btnPurchase);
+            this.AddControlsToPanel(new UCPhurchase());
         }
 
         private void btnExpenses_Click(object sender, EventArgs e)

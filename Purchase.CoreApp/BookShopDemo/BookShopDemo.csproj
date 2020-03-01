@@ -31,9 +31,17 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>exeicon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="C1.Win.C1Chart.2, Version=2.0.20152.67, Culture=neutral, PublicKeyToken=a22e16972c085838, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.DotNetBar2, Version=10.9.0.4, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,6 +53,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCategoryView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCategoryView.Designer.cs">
+      <DependentUpon>AddCategoryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewBookView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewBookView.Designer.cs">
+      <DependentUpon>AddNewBookView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddStockView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddStockView.Designer.cs">
+      <DependentUpon>AddStockView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FinishOrderView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FinishOrderView.Designer.cs">
+      <DependentUpon>FinishOrderView.cs</DependentUpon>
+    </Compile>
     <Compile Include="ImagesResources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -64,6 +96,39 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\DragPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCHome.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCHome.Designer.cs">
+      <DependentUpon>UCHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCPhurchase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCPhurchase.Designer.cs">
+      <DependentUpon>UCPhurchase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCSales.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCSales.Designer.cs">
+      <DependentUpon>UCSales.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddCategoryView.resx">
+      <DependentUpon>AddCategoryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddNewBookView.resx">
+      <DependentUpon>AddNewBookView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddStockView.resx">
+      <DependentUpon>AddStockView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinishOrderView.resx">
+      <DependentUpon>FinishOrderView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ImagesResources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ImagesResources.Designer.cs</LastGenOutput>
@@ -74,6 +139,7 @@
     <EmbeddedResource Include="MainView.resx">
       <DependentUpon>MainView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -83,6 +149,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserControls\UCHome.resx">
+      <DependentUpon>UCHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCPhurchase.resx">
+      <DependentUpon>UCPhurchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCSales.resx">
+      <DependentUpon>UCSales.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -143,6 +218,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Images\MainClose.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="exeicon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

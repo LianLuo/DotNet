@@ -31,17 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainView));
             this.panelNorthSide = new System.Windows.Forms.Panel();
-            this.panelHighLight = new System.Windows.Forms.Panel();
-            this.panelLogo = new System.Windows.Forms.Panel();
-            this.lbSubTitle = new System.Windows.Forms.Label();
-            this.lbTitle = new System.Windows.Forms.Label();
-            this.panelBar = new System.Windows.Forms.Panel();
-            this.panelTitle = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.btnSetting = new System.Windows.Forms.Button();
             this.btnView = new System.Windows.Forms.Button();
             this.btnUsers = new System.Windows.Forms.Button();
@@ -49,17 +38,29 @@
             this.btnPurchase = new System.Windows.Forms.Button();
             this.btnSale = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
+            this.panelHighLight = new System.Windows.Forms.Panel();
+            this.panelLogo = new System.Windows.Forms.Panel();
             this.btnMenu = new System.Windows.Forms.Button();
+            this.lbSubTitle = new System.Windows.Forms.Label();
+            this.lbTitle = new System.Windows.Forms.Label();
             this.picLogo = new System.Windows.Forms.PictureBox();
+            this.panelBar = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label3 = new System.Windows.Forms.Label();
+            this.panelTitle = new System.Windows.Forms.Panel();
             this.lbTime = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.panelDesktop = new System.Windows.Forms.Panel();
             this.panelNorthSide.SuspendLayout();
             this.panelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.panelBar.SuspendLayout();
             this.panelTitle.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // panelNorthSide
@@ -79,128 +80,6 @@
             this.panelNorthSide.Name = "panelNorthSide";
             this.panelNorthSide.Size = new System.Drawing.Size(182, 682);
             this.panelNorthSide.TabIndex = 0;
-            // 
-            // panelHighLight
-            // 
-            this.panelHighLight.BackColor = System.Drawing.Color.White;
-            this.panelHighLight.ForeColor = System.Drawing.Color.White;
-            this.panelHighLight.Location = new System.Drawing.Point(0, 141);
-            this.panelHighLight.Name = "panelHighLight";
-            this.panelHighLight.Size = new System.Drawing.Size(10, 36);
-            this.panelHighLight.TabIndex = 0;
-            // 
-            // panelLogo
-            // 
-            this.panelLogo.Controls.Add(this.btnMenu);
-            this.panelLogo.Controls.Add(this.lbSubTitle);
-            this.panelLogo.Controls.Add(this.lbTitle);
-            this.panelLogo.Controls.Add(this.picLogo);
-            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(182, 140);
-            this.panelLogo.TabIndex = 0;
-            // 
-            // lbSubTitle
-            // 
-            this.lbSubTitle.AutoSize = true;
-            this.lbSubTitle.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSubTitle.ForeColor = System.Drawing.Color.White;
-            this.lbSubTitle.Location = new System.Drawing.Point(40, 83);
-            this.lbSubTitle.Name = "lbSubTitle";
-            this.lbSubTitle.Size = new System.Drawing.Size(102, 16);
-            this.lbSubTitle.TabIndex = 1;
-            this.lbSubTitle.Text = "Gilgit Pakiston";
-            // 
-            // lbTitle
-            // 
-            this.lbTitle.AutoSize = true;
-            this.lbTitle.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitle.ForeColor = System.Drawing.Color.White;
-            this.lbTitle.Location = new System.Drawing.Point(18, 64);
-            this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(153, 19);
-            this.lbTitle.TabIndex = 1;
-            this.lbTitle.Text = "North Books Shop";
-            // 
-            // panelBar
-            // 
-            this.panelBar.Controls.Add(this.btnClose);
-            this.panelBar.Controls.Add(this.label3);
-            this.panelBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelBar.Location = new System.Drawing.Point(182, 0);
-            this.panelBar.Name = "panelBar";
-            this.panelBar.Size = new System.Drawing.Size(1002, 45);
-            this.panelBar.TabIndex = 0;
-            // 
-            // panelTitle
-            // 
-            this.panelTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(91)))), ((int)(((byte)(183)))));
-            this.panelTitle.Controls.Add(this.lbTime);
-            this.panelTitle.Controls.Add(this.label7);
-            this.panelTitle.Controls.Add(this.label6);
-            this.panelTitle.Controls.Add(this.label5);
-            this.panelTitle.Controls.Add(this.label4);
-            this.panelTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTitle.Location = new System.Drawing.Point(182, 45);
-            this.panelTitle.Name = "panelTitle";
-            this.panelTitle.Size = new System.Drawing.Size(1002, 95);
-            this.panelTitle.TabIndex = 0;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(91)))), ((int)(((byte)(183)))));
-            this.label3.Location = new System.Drawing.Point(6, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(273, 19);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "North Books Shop, NLI Market Gilgit";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(35, 19);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(87, 19);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Welcome:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(128, 19);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(93, 19);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "User Name";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(76, 47);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(46, 19);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Role:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(128, 47);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(62, 19);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Admin";
             // 
             // btnSetting
             // 
@@ -322,6 +201,27 @@
             this.btnHome.UseVisualStyleBackColor = true;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
+            // panelHighLight
+            // 
+            this.panelHighLight.BackColor = System.Drawing.Color.White;
+            this.panelHighLight.ForeColor = System.Drawing.Color.White;
+            this.panelHighLight.Location = new System.Drawing.Point(0, 141);
+            this.panelHighLight.Name = "panelHighLight";
+            this.panelHighLight.Size = new System.Drawing.Size(10, 36);
+            this.panelHighLight.TabIndex = 0;
+            // 
+            // panelLogo
+            // 
+            this.panelLogo.Controls.Add(this.btnMenu);
+            this.panelLogo.Controls.Add(this.lbSubTitle);
+            this.panelLogo.Controls.Add(this.lbTitle);
+            this.panelLogo.Controls.Add(this.picLogo);
+            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(182, 140);
+            this.panelLogo.TabIndex = 0;
+            // 
             // btnMenu
             // 
             this.btnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -338,6 +238,28 @@
             this.btnMenu.UseVisualStyleBackColor = true;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
+            // lbSubTitle
+            // 
+            this.lbSubTitle.AutoSize = true;
+            this.lbSubTitle.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSubTitle.ForeColor = System.Drawing.Color.White;
+            this.lbSubTitle.Location = new System.Drawing.Point(40, 83);
+            this.lbSubTitle.Name = "lbSubTitle";
+            this.lbSubTitle.Size = new System.Drawing.Size(102, 16);
+            this.lbSubTitle.TabIndex = 1;
+            this.lbSubTitle.Text = "Gilgit Pakiston";
+            // 
+            // lbTitle
+            // 
+            this.lbTitle.AutoSize = true;
+            this.lbTitle.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitle.ForeColor = System.Drawing.Color.White;
+            this.lbTitle.Location = new System.Drawing.Point(18, 64);
+            this.lbTitle.Name = "lbTitle";
+            this.lbTitle.Size = new System.Drawing.Size(153, 19);
+            this.lbTitle.TabIndex = 1;
+            this.lbTitle.Text = "North Books Shop";
+            // 
             // picLogo
             // 
             this.picLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(91)))), ((int)(((byte)(183)))));
@@ -348,6 +270,16 @@
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picLogo.TabIndex = 1;
             this.picLogo.TabStop = false;
+            // 
+            // panelBar
+            // 
+            this.panelBar.Controls.Add(this.btnClose);
+            this.panelBar.Controls.Add(this.label3);
+            this.panelBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelBar.Location = new System.Drawing.Point(182, 0);
+            this.panelBar.Name = "panelBar";
+            this.panelBar.Size = new System.Drawing.Size(1002, 45);
+            this.panelBar.TabIndex = 0;
             // 
             // btnClose
             // 
@@ -366,13 +298,34 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // timer1
+            // label3
             // 
-            this.timer1.Interval = 30;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(91)))), ((int)(((byte)(183)))));
+            this.label3.Location = new System.Drawing.Point(6, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(273, 19);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "North Books Shop, NLI Market Gilgit";
+            // 
+            // panelTitle
+            // 
+            this.panelTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(91)))), ((int)(((byte)(183)))));
+            this.panelTitle.Controls.Add(this.lbTime);
+            this.panelTitle.Controls.Add(this.label7);
+            this.panelTitle.Controls.Add(this.label6);
+            this.panelTitle.Controls.Add(this.label5);
+            this.panelTitle.Controls.Add(this.label4);
+            this.panelTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTitle.Location = new System.Drawing.Point(182, 45);
+            this.panelTitle.Name = "panelTitle";
+            this.panelTitle.Size = new System.Drawing.Size(1002, 95);
+            this.panelTitle.TabIndex = 0;
             // 
             // lbTime
             // 
+            this.lbTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbTime.AutoSize = true;
             this.lbTime.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTime.ForeColor = System.Drawing.Color.White;
@@ -382,20 +335,79 @@
             this.lbTime.TabIndex = 1;
             this.lbTime.Text = "HH:mm:ss";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(128, 47);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(62, 19);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Admin";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(76, 47);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(46, 19);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Role:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(128, 19);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(93, 19);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "User Name";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(35, 19);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(87, 19);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Welcome:";
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 30;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // timer2
             // 
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // panelDesktop
+            // 
+            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDesktop.Location = new System.Drawing.Point(182, 140);
+            this.panelDesktop.Name = "panelDesktop";
+            this.panelDesktop.Size = new System.Drawing.Size(1002, 542);
+            this.panelDesktop.TabIndex = 1;
             // 
             // MainView
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(1184, 682);
+            this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelTitle);
             this.Controls.Add(this.panelBar);
             this.Controls.Add(this.panelNorthSide);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainView";
@@ -403,11 +415,11 @@
             this.panelNorthSide.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             this.panelLogo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.panelBar.ResumeLayout(false);
             this.panelBar.PerformLayout();
             this.panelTitle.ResumeLayout(false);
             this.panelTitle.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -439,5 +451,6 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lbTime;
         private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Panel panelDesktop;
     }
 }
