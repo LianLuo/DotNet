@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace BookShopDemo
 {
-    public partial class FinishOrderView : Form
+    public partial class AddNewBookView : Form
     {
-        public FinishOrderView()
+        public AddNewBookView()
         {
             InitializeComponent();
         }
 
-        private void btnDone_Click(object sender, EventArgs e)
+        private void btnClear_Click(object sender, EventArgs e)
         {
             //this.Dispose();
         }
@@ -25,6 +25,14 @@ namespace BookShopDemo
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void btnAddCategory_Click(object sender, EventArgs e)
+        {
+            using (AddCategoryView addCategoryView = new AddCategoryView())
+            {
+                addCategoryView.ShowDialog();
+            }
         }
     }
 }

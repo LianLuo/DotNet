@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace BookShopDemo
 {
-    public partial class FinishOrderView : Form
+    public partial class AddStockView : Form
     {
-        public FinishOrderView()
+        public AddStockView()
         {
             InitializeComponent();
-        }
-
-        private void btnDone_Click(object sender, EventArgs e)
-        {
-            //this.Dispose();
         }
 
         private void btnClose_Click(object sender, EventArgs e)

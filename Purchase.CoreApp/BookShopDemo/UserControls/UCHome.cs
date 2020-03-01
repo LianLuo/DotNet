@@ -16,6 +16,7 @@ namespace BookShopDemo.UserControls
         {
             InitializeComponent();
             LoadChart();
+            this.timer1.Start();
         }
 
         Random random = new Random();
@@ -69,6 +70,11 @@ namespace BookShopDemo.UserControls
         {
             chart1.Series[0].Points.Clear();
             LoadChart();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            btnRefresh_Click(sender, e);
         }
     }
 }

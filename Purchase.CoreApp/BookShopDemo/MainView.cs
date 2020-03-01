@@ -97,6 +97,7 @@ namespace BookShopDemo
         private void btnPurchase_Click(object sender, EventArgs e)
         {
             this.MoveSidePanel(this.btnPurchase);
+            this.AddControlsToPanel(new UCPhurchase());
         }
 
         private void btnExpenses_Click(object sender, EventArgs e)

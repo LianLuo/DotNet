@@ -53,6 +53,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCategoryView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCategoryView.Designer.cs">
+      <DependentUpon>AddCategoryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewBookView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewBookView.Designer.cs">
+      <DependentUpon>AddNewBookView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddStockView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddStockView.Designer.cs">
+      <DependentUpon>AddStockView.cs</DependentUpon>
+    </Compile>
     <Compile Include="FinishOrderView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,11 +96,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\DragPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UserControls\UCHome.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\UCHome.Designer.cs">
       <DependentUpon>UCHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCPhurchase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCPhurchase.Designer.cs">
+      <DependentUpon>UCPhurchase.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UCSales.cs">
       <SubType>UserControl</SubType>
@@ -90,6 +117,15 @@
     <Compile Include="UserControls\UCSales.Designer.cs">
       <DependentUpon>UCSales.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddCategoryView.resx">
+      <DependentUpon>AddCategoryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddNewBookView.resx">
+      <DependentUpon>AddNewBookView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddStockView.resx">
+      <DependentUpon>AddStockView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FinishOrderView.resx">
       <DependentUpon>FinishOrderView.cs</DependentUpon>
     </EmbeddedResource>
@@ -115,6 +151,9 @@
     </Compile>
     <EmbeddedResource Include="UserControls\UCHome.resx">
       <DependentUpon>UCHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCPhurchase.resx">
+      <DependentUpon>UCPhurchase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCSales.resx">
       <DependentUpon>UCSales.cs</DependentUpon>
