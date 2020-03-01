@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiColoredModernUI", "Mul
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DropdownPanelDemo", "DropdownPanelDemo\DropdownPanelDemo.csproj", "{58D37342-F1ED-4E55-A274-55952FA1AB8D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookShopDemo", "BookShopDemo\BookShopDemo.csproj", "{CAC43444-21EA-4395-B59C-E347F857BE8D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -143,6 +145,14 @@ Global
 		{58D37342-F1ED-4E55-A274-55952FA1AB8D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{58D37342-F1ED-4E55-A274-55952FA1AB8D}.Release|x86.ActiveCfg = Release|Any CPU
 		{58D37342-F1ED-4E55-A274-55952FA1AB8D}.Release|x86.Build.0 = Release|Any CPU
+		{CAC43444-21EA-4395-B59C-E347F857BE8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAC43444-21EA-4395-B59C-E347F857BE8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAC43444-21EA-4395-B59C-E347F857BE8D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CAC43444-21EA-4395-B59C-E347F857BE8D}.Debug|x86.Build.0 = Debug|Any CPU
+		{CAC43444-21EA-4395-B59C-E347F857BE8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAC43444-21EA-4395-B59C-E347F857BE8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAC43444-21EA-4395-B59C-E347F857BE8D}.Release|x86.ActiveCfg = Release|Any CPU
+		{CAC43444-21EA-4395-B59C-E347F857BE8D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
