@@ -68,6 +68,7 @@
             // 
             // btnEat
             // 
+            this.btnEat.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnEat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(71)))), ((int)(((byte)(166)))));
             this.btnEat.FlatAppearance.BorderSize = 0;
             this.btnEat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -84,6 +85,7 @@
             // 
             // btnTakeaway
             // 
+            this.btnTakeaway.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnTakeaway.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(71)))), ((int)(((byte)(166)))));
             this.btnTakeaway.FlatAppearance.BorderSize = 0;
             this.btnTakeaway.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -100,6 +102,7 @@
             // 
             // btnDelivery
             // 
+            this.btnDelivery.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnDelivery.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(71)))), ((int)(((byte)(166)))));
             this.btnDelivery.FlatAppearance.BorderSize = 0;
             this.btnDelivery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -116,6 +119,7 @@
             // 
             // btnCart
             // 
+            this.btnCart.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnCart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(71)))), ((int)(((byte)(166)))));
             this.btnCart.FlatAppearance.BorderSize = 0;
             this.btnCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -132,6 +136,7 @@
             // 
             // btnView
             // 
+            this.btnView.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(71)))), ((int)(((byte)(166)))));
             this.btnView.FlatAppearance.BorderSize = 0;
             this.btnView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -148,6 +153,7 @@
             // 
             // btnPurchase
             // 
+            this.btnPurchase.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnPurchase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(71)))), ((int)(((byte)(166)))));
             this.btnPurchase.FlatAppearance.BorderSize = 0;
             this.btnPurchase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -164,6 +170,7 @@
             // 
             // btnReport
             // 
+            this.btnReport.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(71)))), ((int)(((byte)(166)))));
             this.btnReport.FlatAppearance.BorderSize = 0;
             this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -180,6 +187,7 @@
             // 
             // btnCustomer
             // 
+            this.btnCustomer.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(71)))), ((int)(((byte)(166)))));
             this.btnCustomer.FlatAppearance.BorderSize = 0;
             this.btnCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -196,6 +204,7 @@
             // 
             // btnSetting
             // 
+            this.btnSetting.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSetting.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(71)))), ((int)(((byte)(166)))));
             this.btnSetting.FlatAppearance.BorderSize = 0;
             this.btnSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
