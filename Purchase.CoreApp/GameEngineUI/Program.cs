@@ -16,7 +16,7 @@ namespace GameEngineUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainView());
+            Application.Run(new DashboardView());
         }
     }
 }
