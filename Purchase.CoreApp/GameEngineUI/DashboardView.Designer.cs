@@ -31,6 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashboardView));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnInfo = new System.Windows.Forms.Button();
+            this.btnFacebook = new System.Windows.Forms.Button();
+            this.btnEmail = new System.Windows.Forms.Button();
+            this.btnWebSite = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.btnEat = new System.Windows.Forms.Button();
             this.btnTakeaway = new System.Windows.Forms.Button();
             this.btnDelivery = new System.Windows.Forms.Button();
@@ -40,11 +45,6 @@
             this.btnReport = new System.Windows.Forms.Button();
             this.btnCustomer = new System.Windows.Forms.Button();
             this.btnSetting = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.btnWebSite = new System.Windows.Forms.Button();
-            this.btnEmail = new System.Windows.Forms.Button();
-            this.btnFacebook = new System.Windows.Forms.Button();
-            this.btnInfo = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -65,6 +65,72 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(60, 682);
             this.panel1.TabIndex = 0;
+            // 
+            // btnInfo
+            // 
+            this.btnInfo.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnInfo.FlatAppearance.BorderSize = 0;
+            this.btnInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInfo.ForeColor = System.Drawing.Color.White;
+            this.btnInfo.Image = ((System.Drawing.Image)(resources.GetObject("btnInfo.Image")));
+            this.btnInfo.Location = new System.Drawing.Point(0, 422);
+            this.btnInfo.Name = "btnInfo";
+            this.btnInfo.Size = new System.Drawing.Size(60, 65);
+            this.btnInfo.TabIndex = 5;
+            this.btnInfo.UseVisualStyleBackColor = true;
+            // 
+            // btnFacebook
+            // 
+            this.btnFacebook.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnFacebook.FlatAppearance.BorderSize = 0;
+            this.btnFacebook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFacebook.ForeColor = System.Drawing.Color.White;
+            this.btnFacebook.Image = ((System.Drawing.Image)(resources.GetObject("btnFacebook.Image")));
+            this.btnFacebook.Location = new System.Drawing.Point(0, 487);
+            this.btnFacebook.Name = "btnFacebook";
+            this.btnFacebook.Size = new System.Drawing.Size(60, 65);
+            this.btnFacebook.TabIndex = 4;
+            this.btnFacebook.UseVisualStyleBackColor = true;
+            // 
+            // btnEmail
+            // 
+            this.btnEmail.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnEmail.FlatAppearance.BorderSize = 0;
+            this.btnEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEmail.ForeColor = System.Drawing.Color.White;
+            this.btnEmail.Image = ((System.Drawing.Image)(resources.GetObject("btnEmail.Image")));
+            this.btnEmail.Location = new System.Drawing.Point(0, 552);
+            this.btnEmail.Name = "btnEmail";
+            this.btnEmail.Size = new System.Drawing.Size(60, 65);
+            this.btnEmail.TabIndex = 3;
+            this.btnEmail.UseVisualStyleBackColor = true;
+            // 
+            // btnWebSite
+            // 
+            this.btnWebSite.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnWebSite.FlatAppearance.BorderSize = 0;
+            this.btnWebSite.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWebSite.ForeColor = System.Drawing.Color.White;
+            this.btnWebSite.Image = ((System.Drawing.Image)(resources.GetObject("btnWebSite.Image")));
+            this.btnWebSite.Location = new System.Drawing.Point(0, 617);
+            this.btnWebSite.Name = "btnWebSite";
+            this.btnWebSite.Size = new System.Drawing.Size(60, 65);
+            this.btnWebSite.TabIndex = 2;
+            this.btnWebSite.UseVisualStyleBackColor = true;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
+            this.btnClose.Location = new System.Drawing.Point(0, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(60, 65);
+            this.btnClose.TabIndex = 2;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnEat
             // 
@@ -219,72 +285,6 @@
             this.btnSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSetting.UseVisualStyleBackColor = false;
             // 
-            // btnClose
-            // 
-            this.btnClose.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(0, 0);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(60, 65);
-            this.btnClose.TabIndex = 2;
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnWebSite
-            // 
-            this.btnWebSite.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnWebSite.FlatAppearance.BorderSize = 0;
-            this.btnWebSite.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnWebSite.ForeColor = System.Drawing.Color.White;
-            this.btnWebSite.Image = ((System.Drawing.Image)(resources.GetObject("btnWebSite.Image")));
-            this.btnWebSite.Location = new System.Drawing.Point(0, 617);
-            this.btnWebSite.Name = "btnWebSite";
-            this.btnWebSite.Size = new System.Drawing.Size(60, 65);
-            this.btnWebSite.TabIndex = 2;
-            this.btnWebSite.UseVisualStyleBackColor = true;
-            // 
-            // btnEmail
-            // 
-            this.btnEmail.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnEmail.FlatAppearance.BorderSize = 0;
-            this.btnEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEmail.ForeColor = System.Drawing.Color.White;
-            this.btnEmail.Image = ((System.Drawing.Image)(resources.GetObject("btnEmail.Image")));
-            this.btnEmail.Location = new System.Drawing.Point(0, 552);
-            this.btnEmail.Name = "btnEmail";
-            this.btnEmail.Size = new System.Drawing.Size(60, 65);
-            this.btnEmail.TabIndex = 3;
-            this.btnEmail.UseVisualStyleBackColor = true;
-            // 
-            // btnFacebook
-            // 
-            this.btnFacebook.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnFacebook.FlatAppearance.BorderSize = 0;
-            this.btnFacebook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFacebook.ForeColor = System.Drawing.Color.White;
-            this.btnFacebook.Image = ((System.Drawing.Image)(resources.GetObject("btnFacebook.Image")));
-            this.btnFacebook.Location = new System.Drawing.Point(0, 487);
-            this.btnFacebook.Name = "btnFacebook";
-            this.btnFacebook.Size = new System.Drawing.Size(60, 65);
-            this.btnFacebook.TabIndex = 4;
-            this.btnFacebook.UseVisualStyleBackColor = true;
-            // 
-            // btnInfo
-            // 
-            this.btnInfo.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnInfo.FlatAppearance.BorderSize = 0;
-            this.btnInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInfo.ForeColor = System.Drawing.Color.White;
-            this.btnInfo.Image = ((System.Drawing.Image)(resources.GetObject("btnInfo.Image")));
-            this.btnInfo.Location = new System.Drawing.Point(0, 422);
-            this.btnInfo.Name = "btnInfo";
-            this.btnInfo.Size = new System.Drawing.Size(60, 65);
-            this.btnInfo.TabIndex = 5;
-            this.btnInfo.UseVisualStyleBackColor = true;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -309,6 +309,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(71)))), ((int)(((byte)(166)))));

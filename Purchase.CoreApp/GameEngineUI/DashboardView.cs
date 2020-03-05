@@ -15,6 +15,7 @@ namespace GameEngineUI
         public DashboardView()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
