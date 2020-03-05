@@ -16,7 +16,12 @@ namespace GameEngineUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DashboardView());
+            LoginView view = new LoginView();
+            if(view.ShowDialog() == DialogResult.OK)
+            {
+                Application.Run(new DashboardView());
+            }
+            
         }
     }
 }
