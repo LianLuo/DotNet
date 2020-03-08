@@ -39,6 +39,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameEngineUI", "GameEngineU
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarkThemeApp", "DarkThemeApp\DarkThemeApp.csproj", "{4C8F5074-84AE-4934-952E-630943420846}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DasboardDemo", "DasboardDemo\DasboardDemo.csproj", "{5637907C-F66C-4353-800F-B4543F5ADFF4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -183,6 +185,14 @@ Global
 		{4C8F5074-84AE-4934-952E-630943420846}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4C8F5074-84AE-4934-952E-630943420846}.Release|x86.ActiveCfg = Release|Any CPU
 		{4C8F5074-84AE-4934-952E-630943420846}.Release|x86.Build.0 = Release|Any CPU
+		{5637907C-F66C-4353-800F-B4543F5ADFF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5637907C-F66C-4353-800F-B4543F5ADFF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5637907C-F66C-4353-800F-B4543F5ADFF4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5637907C-F66C-4353-800F-B4543F5ADFF4}.Debug|x86.Build.0 = Debug|Any CPU
+		{5637907C-F66C-4353-800F-B4543F5ADFF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5637907C-F66C-4353-800F-B4543F5ADFF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5637907C-F66C-4353-800F-B4543F5ADFF4}.Release|x86.ActiveCfg = Release|Any CPU
+		{5637907C-F66C-4353-800F-B4543F5ADFF4}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
