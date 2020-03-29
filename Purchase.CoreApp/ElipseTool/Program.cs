@@ -16,7 +16,7 @@ namespace ElipseTool
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BarCodeView());
+            Application.Run(new Form1());
         }
     }
 }

@@ -57,6 +57,9 @@
     <Compile Include="BarCodeView.Designer.cs">
       <DependentUpon>BarCodeView.cs</DependentUpon>
     </Compile>
+    <Compile Include="CircularPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ElipseControl.cs">
       <SubType>Component</SubType>
     </Compile>
