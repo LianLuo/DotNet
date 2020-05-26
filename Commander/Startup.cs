@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Commander.IRepository;
 using Commander.Models;
 using Commander.Repository;
@@ -14,6 +15,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json.Serialization;
 
 namespace Commander
 {
@@ -29,9 +31,15 @@ namespace Commander
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
             services.AddDbContext<CommandContext>(opt=>opt.UseSqlServer(Configuration.GetConnectionString("CommandConnection")));
-            services.AddScoped<IRepositoryBase<BaseEntity>,CommandRepo>();
+            
+            services.AddControllers().AddNewtonsoftJson(s=>{
+                s.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            });
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            
+            //services.AddScoped<IRepositoryBase<BaseEntity>,CommandRepo>();
+            services.AddScoped<IRepositoryBase<BaseEntity>, SqlCommandRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
