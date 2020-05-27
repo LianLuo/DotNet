@@ -6,9 +6,11 @@ namespace Commander.Repository
 {
     public class SqlCommandRepo : RepositoryBase
     {
-        private readonly CommandContext _context;
+        private readonly CommandSqliteContext _context;
 
-        public SqlCommandRepo(CommandContext context)
+        //private readonly CommandContext _context;
+
+        public SqlCommandRepo(CommandSqliteContext context)
         {
             _context = context;
         }
