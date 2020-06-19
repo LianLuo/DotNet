@@ -1,0 +1,54 @@
+@page "/command/list"
+@using BlazorApp.BusinessComponent
+@inject IBaseBusinessComponent<Commander> cmdComp
+@inject NavigationManager nav
+<h1>Commander list</h1>
+@if(null == commanders)
+{
+    <p>Loading....</p>
+}else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>How To</th>
+                <th>Line</th>
+                <th>Platform</th>
+                <th>Created Date</th>
+                <th>Last Updated Date</th>
+                <th>Operation</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var cmd in commanders)
+            {
+                <tr>
+                    <td>@cmd.HowTo</td>
+                    <td>@cmd.Line</td>
+                    <td>@cmd.Platform</td>
+                    <td>@cmd.CreatedDate.ToString("yyyy-MMM")</td>
+                    <td>@cmd.LastUpdatedDate.ToString("yyyy-MMM")</td>
+                    <td>
+                        <a href="/command/edit/@cmd.ID">Edit</a>&nbsp;&nbsp;
+                        <a href="/command/delete/@cmd.ID">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+<button @onclick="BtnClick_Redirect">Add Command</button>
+@code
+{
+    private IEnumerable<Commander> commanders;
+
+    protected override void OnInitialized()
+    {
+        commanders = cmdComp.GetAllEntities();
+    }
+
+    private void BtnClick_Redirect()
+    {
+        nav.NavigateTo("/command/add");
+    }
+}

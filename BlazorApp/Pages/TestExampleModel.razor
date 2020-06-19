@@ -1,0 +1,17 @@
+@page "/testexample"
+
+<EditForm Model="@exampleModel" OnValidSubmit="HandleValidSubmit">
+    <DataAnnotationsValidator/>
+    <ValidationSummary/>
+    <InputText id="name" @bind-Value="exampleModel.Name" />
+    <button type="submit">Submit</button>
+</EditForm>
+
+@code{
+    private ExampleModel exampleModel = new ExampleModel();
+
+    private void HandleValidSubmit()
+    {
+        System.Console.WriteLine("OnValidSubmit");
+    }
+}
