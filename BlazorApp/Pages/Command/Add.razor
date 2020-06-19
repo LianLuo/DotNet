@@ -1,0 +1,55 @@
+@page "/command/add"
+@page "/command/edit/{Id:int}"
+@using BlazorApp.BusinessComponent
+@inject IBaseBusinessComponent<Commander> cmdComp
+@inject NavigationManager nav
+
+<h2>Add Command</h2>
+<EditForm Model="@commander" OnSubmit="HandleSubmit">
+    <DataAnnotationsValidator/>
+    <ValidationSummary />
+    <p>
+        <label>How To:<InputText @bind-Value="commander.HowTo"/></label>
+    </p>
+    <p>
+        <label>Line:<InputText @bind-Value="commander.Line"/></label>
+    </p>
+    <p>
+        <label>
+            Platform : <InputText @bind-Value="commander.Platform"/>
+        </label>
+    </p>
+    <button type="submit">@Text</button>
+</EditForm>
+@code{
+    [Parameter]
+    public int Id {get;set;}
+    private Commander commander{get;set;}
+    private string Text = "Submit";
+
+    protected override void OnInitialized()
+    {
+        @* 在页面加载初始化的时候出发。 *@
+        if(0 != Id)
+        {
+            commander = cmdComp.GetEntityById(Id);
+        }
+        commander = commander??new Commander();
+    }
+
+    private void HandleSubmit()
+    {
+        //Console.WriteLine($"HandleSubmit,{commander.HowTo}");
+        if(Id == 0)
+        {
+            cmdComp.AddEntity(commander);
+        }
+        else
+        {
+            cmdComp.UpdateEntity(commander);
+        }
+        
+        cmdComp.SaveChanges();
+        nav.NavigateTo("/command/list");
+    }
+}
