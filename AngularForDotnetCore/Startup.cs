@@ -2,32 +2,28 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using AutoMapper;
-using Commander.IRepository;
-using Commander.Models;
-using Commander.Repository;
+using AngularForDotnetCore.Components;
+using AngularForDotnetCore.Repo;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json.Serialization;
 
-namespace Commander
+namespace AngularForDotnetCore
 {
     public class Startup
     {
+        private readonly string MyCors = "ANY";
         public Startup(IConfiguration configuration)
         {
-            using(var client = new CommandSqliteContext())
+            using(var client = new ApiDbContext())
             {
                 client.Database.EnsureCreated();
             }
-
             Configuration = configuration;
         }
 
@@ -36,15 +32,17 @@ namespace Commander
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddDbContext<CommandContext>(opt=>opt.UseSqlServer(Configuration.GetConnectionString("CommandConnection")));
-            services.AddEntityFrameworkSqlite().AddDbContext<CommandSqliteContext>();
-            services.AddControllers().AddNewtonsoftJson(s=>{
-                s.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            services.AddControllers().AddNewtonsoftJson();
+            services.AddEntityFrameworkSqlite().AddDbContext<ApiDbContext>();
+            services.AddCors(opt=>{
+                opt.AddPolicy(MyCors, builder=>{
+                    builder.WithOrigins("http://localhost:4200")                    
+                    .AllowAnyMethod()
+                    .AllowAnyHeader();
+                });
             });
-            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-            
-            //services.AddScoped<IRepositoryBase<BaseEntity>,CommandRepo>();
-            services.AddScoped<IRepositoryBase<BaseEntity>, SqlCommandRepo>();
+            services.AddScoped<BankAccountComponent>();
+            services.AddScoped<BankComponent>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,11 +53,12 @@ namespace Commander
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            //app.UseAuthorization();
+            app.UseCors(MyCors);
 
             app.UseEndpoints(endpoints =>
             {

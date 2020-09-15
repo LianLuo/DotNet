@@ -1,8 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Commander.Models
+namespace Commander.Dtos
 {
-    public class Command : BaseEntity
+    public class CommandUpdateDto
     {
         [Required]
         [MaxLength(256)]

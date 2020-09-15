@@ -1,19 +1,52 @@
+using System;
 using System.Collections.Generic;
-using Commander.IRepository;
 using Commander.Models;
 
 namespace Commander.Repository
 {
-    public class SqlCommandRepo : IRepositoryBase<Command>
+    public class SqlCommandRepo : RepositoryBase
     {
-        public IEnumerable<Command> GetEntities()
+        private readonly CommandSqliteContext _context;
+
+        //private readonly CommandContext _context;
+
+        public SqlCommandRepo(CommandSqliteContext context)
         {
-            throw new System.NotImplementedException();
+            _context = context;
+        }
+        protected override IEnumerable<BaseEntity> MockData()
+        {
+            return this._context.Commands;
         }
 
-        public Command GetEntity(int id)
+        public override bool SaveChanges()
         {
-            throw new System.NotImplementedException();
+            return this._context.SaveChanges() > 0;
+        }
+
+        public override void CreateCommand(BaseEntity entity)
+        {
+            if(entity == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            this._context.Commands.Add(entity as Command);
+        }
+
+        public override void UpdatedCommand(BaseEntity entity)
+        {
+            //Nothing
+        }
+
+        public override void DeleteCommand(BaseEntity entity)
+        {
+            if(entity == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            this._context.Commands.Remove(entity as Command);
         }
     }
 }

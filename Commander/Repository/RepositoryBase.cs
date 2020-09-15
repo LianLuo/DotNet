@@ -7,6 +7,16 @@ namespace Commander.Repository
 {
     public abstract class RepositoryBase : IRepositoryBase<BaseEntity>
     {
+        public virtual void CreateCommand(BaseEntity entity)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public virtual void DeleteCommand(BaseEntity entity)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public IEnumerable<BaseEntity> GetEntities()
         {
             return MockData();
@@ -15,7 +25,17 @@ namespace Commander.Repository
         public BaseEntity GetEntity(int id)
         {
             var result = MockData();
-            return result.Where(p=>p.ID == id).FirstOrDefault();
+            return result.FirstOrDefault(p=>p.ID == id);
+        }
+
+        public virtual bool SaveChanges()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public virtual void UpdatedCommand(BaseEntity entity)
+        {
+            throw new System.NotImplementedException();
         }
 
         protected abstract IEnumerable<BaseEntity> MockData();
