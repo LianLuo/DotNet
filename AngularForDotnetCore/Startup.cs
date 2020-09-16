@@ -43,6 +43,7 @@ namespace AngularForDotnetCore
             });
             services.AddScoped<BankAccountComponent>();
             services.AddScoped<BankComponent>();
+            services.AddScoped<EmployeeComponent>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
