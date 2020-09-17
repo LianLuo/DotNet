@@ -12,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json.Serialization;
 
 namespace AngularForDotnetCore
 {
@@ -32,7 +33,10 @@ namespace AngularForDotnetCore
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers().AddNewtonsoftJson();
+            services.AddControllers().AddNewtonsoftJson(opt=>{
+                // solute object to json, property will be lowercase first letter.
+                opt.SerializerSettings.ContractResolver = new DefaultContractResolver();
+            });
             services.AddEntityFrameworkSqlite().AddDbContext<ApiDbContext>();
             services.AddCors(opt=>{
                 opt.AddPolicy(MyCors, builder=>{
@@ -44,6 +48,7 @@ namespace AngularForDotnetCore
             services.AddScoped<BankAccountComponent>();
             services.AddScoped<BankComponent>();
             services.AddScoped<EmployeeComponent>();
+            services.AddScoped<PaymentDetailComponent>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

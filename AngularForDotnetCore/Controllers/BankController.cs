@@ -23,5 +23,11 @@ namespace AngularForDotnetCore.Controllers
             var banks = await this.bc.GetBanksAsync();
             return Ok(banks);
         }
+
+        public async Task<ActionResult<Bank>> AddBank(Bank bank)
+        {
+            await this.bc.AddBankAsync(bank);
+            return Ok(bank);
+        }
     }
 }

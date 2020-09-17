@@ -9,5 +9,7 @@ namespace AngularForDotnetCore.Models
         public int BankID { get; set; }
         [Column(TypeName="VARCHAR(100)")]
         public string BankName { get; set; }
+        [Column(TypeName="VARCHAR(32)")]
+        public string ShortName { get; set; }
     }
 }

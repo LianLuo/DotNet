@@ -35,7 +35,7 @@ namespace AngularForDotnetCore.Components
             await this._ctx.SaveChangesAsync();
         }
 
-        public async Task DeleteEmployee(int employeeId)
+        public async Task<Employee> DeleteEmployee(int employeeId)
         {
             var emp = await this._ctx.Employees.FindAsync(employeeId);
             if(emp != null)
@@ -43,6 +43,7 @@ namespace AngularForDotnetCore.Components
                 this._ctx.Employees.Remove(emp);
             }
             await this._ctx.SaveChangesAsync();
+            return emp;
         }
     }
 }
