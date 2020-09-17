@@ -13,6 +13,7 @@ namespace AngularForDotnetCore.Repo
         public DbSet<Bank> Banks { get; set; }
         public DbSet<BankAccount> BankAccounts { get; set; }
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<PaymentDetail> PaymentDetails { get; set; }
     }
 
 }

@@ -52,14 +52,14 @@ namespace AngularForDotnetCore.Controllers
         public async Task<ActionResult<Employee>> CreateEmployee(Employee emp)
         {
             await this._ec.AddEmployee(emp);
-            return Ok();
+            return Ok(emp);
         }
 
         [HttpDelete("{id}")]
         public async Task<ActionResult<Employee>> DeleteEmployee(int id)
         {
-            await this._ec.DeleteEmployee(id);
-            return Ok();
+            var emp = await this._ec.DeleteEmployee(id);
+            return Ok(emp);
         }
 
     }
