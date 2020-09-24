@@ -42,5 +42,35 @@ namespace AngularForDotnetCore.Controllers
 
             return NotFound();
         }
+
+        [HttpGet]
+        [Authorize(Roles = "Admin")]
+        [Route("ForAdmin")]
+        public async Task<string> GetForAdmin()
+        {
+            await Task.Delay(2000);
+
+            return "Web Method for Admin";
+        }
+
+        [HttpGet]
+        [Authorize(Roles = "Customer")]
+        [Route("ForCustomer")]
+        public async Task<string> GetForCustomer()
+        {
+            await Task.Delay(2000);
+
+            return "Web Method for Customer";
+        }
+
+        [HttpGet]
+        [Authorize(Roles = "Customer,Admin")]
+        [Route("ForAdminCustomer")]
+        public async Task<string> GetForAdminOrCustomer()
+        {
+            await Task.Delay(2000);
+
+            return "Web Method for Customer or Admin";
+        }
     }
 }

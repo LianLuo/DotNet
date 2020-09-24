@@ -9,6 +9,7 @@ using AngularForDotnetCore.Components;
 using AngularForDotnetCore.Dtos;
 using AngularForDotnetCore.Models;
 using AutoMapper;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -20,14 +21,16 @@ namespace AngularForDotnetCore.Controllers
     public class ApplicationUserController : ControllerBase
     {
         private ApplicationUserComponent _appUC;
+        private UserManagerComponent _userMC;
         private IMapper _mapper;
         private AppSettings _appSettings;
 
-        public ApplicationUserController(ApplicationUserComponent appUC, IMapper mapper, IOptions<AppSettings> appSettings)
+        public ApplicationUserController(ApplicationUserComponent appUC, UserManagerComponent userMC, IMapper mapper, IOptions<AppSettings> appSettings)
         {
             this._appUC = appUC;
             this._mapper = mapper;
             this._appSettings = appSettings.Value;
+            this._userMC = userMC;
         }
 
         [HttpPost]
@@ -50,9 +53,12 @@ namespace AngularForDotnetCore.Controllers
             {
                 return BadRequest();
             }
+            var roles = await this._userMC.GetRolesAsync(applicationUser);
+            IdentityOptions options = new IdentityOptions();
             var tokenDescriptor = new SecurityTokenDescriptor { 
                 Subject = new ClaimsIdentity(new Claim[] { 
-                    new Claim ("UserID", dbApplication.ID.ToString())
+                    new Claim ("UserID", dbApplication.ID.ToString()),
+                    new Claim(options.ClaimsIdentity.RoleClaimType,roles.FirstOrDefault())
                 }),
                 Expires = DateTime.UtcNow.AddDays(1),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(this._appSettings.JWT_Security)), SecurityAlgorithms.HmacSha256Signature)
