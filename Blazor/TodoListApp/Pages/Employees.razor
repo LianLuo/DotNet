@@ -1,0 +1,28 @@
+﻿@page "/employee"
+<div class="row">
+    <div class="col-md-5">
+        <Employee OnAddEmployee="AddEmpoyee"/>
+    </div>
+    <div class="col-md-7">
+        <EmployeeList ItemList="data" OnDeleteHandler="DeleteEmployee"/>
+    </div>
+</div>
+
+@code {
+    private IList<EmployeeItem> data;
+
+    protected override void OnInitialized()
+    {
+        this.data = new List<EmployeeItem>();
+    }
+
+    private void AddEmpoyee(EmployeeItem item)
+    {
+        this.data.Add(item);
+    }
+
+    private void DeleteEmployee(EmployeeItem item)
+    {
+        this.data.Remove(item);
+    }
+}

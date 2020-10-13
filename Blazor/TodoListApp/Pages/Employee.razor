@@ -1,0 +1,38 @@
+﻿<h1 class="display-4">EMP. Register</h1>
+<EditForm Model="@Item" OnValidSubmit="@HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <input type="hidden" name="Id" @bind="Item.Id">
+    <div class="form-group">
+        <InputText name="FullName" @bind-Value="Item.FullName" placeholder="Full Name" />
+    </div>
+
+    <div class="form-group">
+        <InputText name="EmpCode" @bind-Value="Item.EmpCode" placeholder="EmpCode" />
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <InputText name="Position" @bind-Value="Item.Position" placeholder="Position" />
+        </div>
+        <div class="form-group col-md-6">
+            <InputText name="Mobile" @bind-Value="Item.Mobile" placeholder="Mobile" />
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-lg btn-block btn-info">SUBMIT</button>
+    </div>
+</EditForm>
+
+@code {
+    private EmployeeItem Item = new EmployeeItem();
+
+    [Parameter]
+    public EventCallback<EmployeeItem> OnAddEmployee {get;set;}
+
+    private async void HandleValidSubmit()
+    {
+        await OnAddEmployee.InvokeAsync(Item);
+        Item = new EmployeeItem();
+    }
+
+}
