@@ -53,3 +53,8 @@
 /ResturantWebApp/Properties
 /ResturantWebApp/bin
 /ResturantWebApp/obj
+/ImageUpload/Properties
+/ImageUpload/obj
+/Blazor/TodoListApp/obj
+/Blazor/TodoListApp/.vscode
+/Blazor/TodoListApp/bin
