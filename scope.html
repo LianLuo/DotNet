@@ -1,0 +1,29 @@
+<script type="text/javascript">
+var global_ten = 10;
+
+
+function papa(){
+    var hundred_more = 100;
+    var sum = function(a,b){
+        return a + b + global_ten + hundred_more;
+    };
+    return sum(9,11);
+}
+
+papa();
+
+
+function papa2(){
+    var hundred_more = 100;
+    function sum(a,b){
+        function insertSum(){
+            var i_m_so_local = 1;
+            return a+b+global_ten + hundred_more;
+        }
+        return insertSum();
+    };
+    return sum(9,11);
+}
+
+papa2()
+</script>
