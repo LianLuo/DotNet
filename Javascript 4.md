@@ -1,7 +1,7 @@
 ## 面向对象编程
 本章介绍JavaScript面向对象特性，包括对象，构造器函数和原型。本章还将讨论代码重用和继承。
 ### 4.1 构造器和类
-在PHP种，如果有一个Dog类，可以使用如下代码创建这个类的一个$fido实例：
+在PHP中，如果有一个Dog类，可以使用如下代码创建这个类的一个$fido实例：
 ```php
 // PHP
 $fido = new Dog();
@@ -11,9 +11,9 @@ JavaScript有一个类似的语法：
 // JavaScipt
 var fido = new Dog();
 ```
-一个重要的区别是，Dog在JavaScript种不是一个类，因为该语言种没有类。Dog只是一个函数。但是，用来创建对象的函数称为构造函数（constructor functions）。
+一个重要的区别是，Dog在JavaScript中不是一个类，因为该语言中没有类。Dog只是一个函数。但是，用来创建对象的函数称为构造函数（constructor functions）。
 从语法上看，一般的函数和一个构造器函数之间并没有区别。区别在于其用途。因此，为了实现可读性，构造器函数名称的首字母通常大写。
-当你使用new运算符调用一个函数的时候，它总是返回一个对象。在函数体内部，这个对象称为this。即便在函数种不做任何特殊的事情，也会有this对象。记住，如果不使用new调用的话，没有一条显式的return语句的每个函数都会返回undefined：
+当你使用new运算符调用一个函数的时候，它总是返回一个对象。在函数体内部，这个对象称为this。即便在函数中不做任何特殊的事情，也会有this对象。记住，如果不使用new调用的话，没有一条显式的return语句的每个函数都会返回undefined：
 ```javascript
 function Dog(){
     this.name = "Fido";
@@ -27,7 +27,7 @@ var fido = new Dog();
 fido.sayName();// "Woof! Fido"
 ```
 ---
-**注意：** 在JavaScript种，与在PHP中一样，当你没有给构造器函数传递参数的时候，圆括号是可选的，因此，var fido = new Dog;也是有效的。
+**注意：** 在JavaScript中，与在PHP中一样，当你没有给构造器函数传递参数的时候，圆括号是可选的，因此，var fido = new Dog;也是有效的。
 
 ---
 如果在控制台输入fido，将会看到它有两个属性：name和sayName。有些控制台，还会给出一个名为\_\_proto\_\_的特殊属性，但你现在可以忽略它。
@@ -375,7 +375,7 @@ constructed.hasOwnProperty('toString'); // false
 literal.hasOwnProperty('hasOwnProperty'); // false
 ```
 让我们做更多一些思考。toString()方法来自何处？我们如何才能够搞清楚谁是原型？
-#### 4.5.1 __proto__
+#### 4.5.1 \_\_proto\_\_
 对象拥有原型，但是，它们没有prototype属性，只有函数才会有这个属性。然而，很多环境为每个对象提供了一个特殊的\_\_proto\_\_属性。\_\_proto\_\_并不是随处都可用的，因为它只是对于调试和学习有用。
 \_\_proto\_\_是一个属性，它表明了对象以及创建该对象的构造器函数的prototype属性之间的秘密关系：
 ```javascript
@@ -550,7 +550,7 @@ function extend(child, parent){
 
 ---
 只需要给extend添加两个小内容：
-+ 让子构造器函数保留对夫构造器函数的一个引用，以备不时之需。
++ 让子构造器函数保留对父构造器函数的一个引用，以备不时之需。
 + 重置子构造器函数的constructor属性，使其指向子构造器函数，以防在自省的时候需要（你将会在第5章看到关于这一属性的更多介绍）。
 ```javascript
 function extend(child, parent){
@@ -600,7 +600,7 @@ var precious = {
 ```javascript
 object.sayName.call(precious); // "My name is iPhone"
 ```
-如果将方法借用和经典的继承结合起来，那么，可以你既获得自身属性，也可以胡德原型属性：
+如果将方法借用和经典的继承结合起来，那么，可以你既获得自身属性，也可以获得原型属性：
 ```javascript
 function Parent(name){
     this.name = name;
@@ -623,4 +623,4 @@ bear.hasOwnProperty("name"); // true
 bear.hasOwnProperty("family"); // false
 ```
 #### 4.6.6 结论
-正如你所看到的，很多种选项可以用来实现继承。你可以根据手边的任务，个人的偏好或团队的偏好来选择一种方法。你甚至可以构建自己的解决方法，或者使用你所选择的库自带的方案。然而，注意，深继承链在JavaScript项目种并不常见，因为这种语言允许你直接复制其他对象的属性和方法，或者“借用”这些属性和方法实现自己的任务。或者说，就像四人组在<\<Design Pattern\>>一书中所说的：“对象组合优先于类继承”。
+正如你所看到的，很多种选项可以用来实现继承。你可以根据手边的任务，个人的偏好或团队的偏好来选择一种方法。你甚至可以构建自己的解决方法，或者使用你所选择的库自带的方案。然而，注意，深继承链在JavaScript项目中并不常见，因为这种语言允许你直接复制其他对象的属性和方法，或者“借用”这些属性和方法实现自己的任务。或者说，就像四人组在<\<Design Pattern\>>一书中所说的：“对象组合优先于类继承”。

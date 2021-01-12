@@ -544,6 +544,253 @@ var a = ['one','and','two','and','three','and','four'];
 a.slice(4).toString(); // "three,and,four"
 ```
 **splice()**
+Array.prototype.splice()是操作数组的强大函数。熟练掌握它是一个好主意。
+splice()方法可以同时添加和删除元素。它通过给定的开始索引和长度来删除元素。然后，在删除后的元素所创建的“空白空间里”，可以插入其他元素。
+它类似于PHP中的array_splice()。
+然而，请注意Array.prototype.slice()的不同之处。splice()接受一个开始索引和一个长度（元素的数目）来进行删除，而slice()接受开始索引和结束索引。
+```PHP
+// php
+$input = array("red","green","blue","yellow","purple");
+$slice = array_splice($input,2,2,"orange");
+print_r($input); // "red","green","orange","purple"
+print_r($slice); // "blue","yellow"
+```
+```javascript
+ // javascript
+ var input = ["red","green","blue","yellow","purple"];
+ var slice = input.slice(2,2,"orange");
+ input.toString(); // "red,green,orange,purple"
+ slice.toString(); // "blue,yellow"
+```
+可以添加多个元素以代替删掉的元素，如果这些元素不是数组，就把它们当做只有一个元素的数组：
+```javascript
+var input = ["red","green","blue","yellow","purple"];
+ var slice = input.slice(2,2,["black","white"],"grey");
+ input.toString(); // "red,green,black,white,grey"
+```
+**reverse()**
+正如起名字所示，Array.prototype.reverse()将数组元素的顺序反转（最后一个元素变成第一个元素），这类似于PHP的array_reverse()：
+```javascript
+[1,2,3].reverse().toString();// "3,2,1"
+```
+**join()**
+Array.prototype.join()类似于PHP的implode()。它返回数组的元素祖成一个字符串。默认的分隔符是逗号：
+```javascript
+[5,4,3].join(" > "); // "5 > 4 > 3"
+[5,4,3].join(); // "5,4,3" same as toString()
+[5,4,3].join(''); // "543"
+```
+在PHP中，与implode()相反的函数时explode()；在JavaScript中，Array.prototype.join()的相反函数是String.prototype.split()，我们还将会介绍它。
+目前，对于数组的介绍就到此为止。接下来，让我们看看正则表达式。
+#### 5.4.3 RegExp
+RegExp构造器函数创建正则表达式对象。它可以和new一起使用，也可以不使用new。它还有一种替代语法，就是使用一个正则表达式直接量：
+```javascript
+var re = new RegExp('[a-z]'); // 构造器函数
+var re = RegExp('[a-z]'); // 不使用'new'的构造器函数
+var re = /[a-z]/;
+```
+正如你所看到的，直接量的方式更加简短和容易。只有在通常连接字符串创建临时的正则表达式模式的时候，才需要使用构造器。
 
+---
+**注意：** 在ES3中，用直接量表示法定义的正则表达式对象，在解析阶段只会创建一次：
+```javascript
+function gimme(){
+    return /a-z/;
+}
 
+var a = gimme();
+var b = gimme();
+a === b; // false.但是在ES3中为真
+```
+---
+我们可以指定3种regex限定符种的任意一种：
++ global（使用g），匹配所有出现，而不只是第一次出现。
++ multiline（使用m）。
++ ignoreCase（i）。
+
+可以用任意的顺序来设置它们。默认情况下，它们都是false：
+```javascript
+var re = new RegExp('[a-z]','gmi');
+var re = /[a-z]/ig;
+
+// 测试
+re.ignoreCase; // true
+re.multiline; // false
+```
+**test()**
+在创建了regex对象之后，你可以使用exec()和test()来匹配字符串。如果至少找到一个匹配的话，exec()返回匹配，而test()只是返回true/false。
+```javascript
+re.exec("something"); // 返回匹配
+re.test("something"); // 返回true|false
+```
+regex对象的其他属性如下所示：
+```javascript
+re.lastIndex; // 最后一次匹配的索引
+re.source; // 作为一个字符串的regex模式（例如，"[a-z]"）
+re.global; // 是否设置了g标识
+re.multiline; // 是否设置了 m 标识
+re.ignoreCase; // 是否设置了 i 标识
+```
+**exec()**
+当你使用re.exec()的时候，返回值是一个数组，其中包括所有的匹配以及另外两个属性：input和index，这两个属性分别是要匹配的输入字符串，以及匹配的索引。
+我们来更详细第看一个例子：
+```javascript
+var re = /([dn])(o+)/;
+var result = re.exec("doodle noodle");
+result.join(', '); // "doo, d, oo"
+```
+正如你所看到的，result是一个数组。它包含了regex模式中的完整匹配(doo)以及分组匹配()。还可以看到result数组有额外的属性input和index。
+```javascript
+result.input; // "doodle noodle"
+result.index; // 0
+```
+如果再次调用re.exec()，将会得到完全相同的结果。但是，regex模式还应该匹配“noo”。要获得所有的匹配，我们需要g修饰符：
+```javascript
+var re = /(dn)(o+)/g;
+```
+然后，在一个循环中调用exec()并获得下一个匹配。在每次匹配中，都使用匹配结束的索引字符来更新re.lastIndex属性。当re.exec()返回null（这也再次导致re.lastIndex变为0），就告诉你不在有其他匹配：
+```javascript
+var re = /(dn)(o+)/g;
+var str = "doodle noodle";
+re.lastIndex; // 0
+
+re.exec(str); // ["doo","d","oo"]
+re.lastIndex; // 3
+
+re.exec(str); // ["noo","n","oo"]
+re.lastIndex; // 10
+
+re.exec(str); // null
+re.lastIndex; // 0
+```
+如下是以循环形式实现的相同示例：
+```javascript
+var re = /([dn])(o+)/g;
+var str = "doodle noodle";
+
+var match;
+while(match = re.exec(str)){
+    console.log(match);
+    console.log(re.lastIndex);
+}
+```
+#### 5.4.4 Function
+可以使用Function构造函数来创建函数对象：
+```javascript
+var f = new Function('a','b',"return a+b");
+f(4,5); // 9
+```
+正如你所看见的，这种创建函数的方式很难看，并且有eval()的味道，因此应该尽可能地避免这样做。尽管可以很聪明滴把Function()用于一些元编程任务，但对于更为常见的问题，JavaScript足够动态了，因此，我们很少需要把代码编写为一个字符串。
+Function()的用法之一是替代eval()，因为Function()创建了一个本地作用域，并且在计算变量之后不会将其泄露。
+```javascript
+var code = "var tmp = 1;console.log(tmp)";
+Function(code)();// Logs 1
+typeof tmp; // undefined;
+
+eval(code); // Logs 1
+typeof tmp; // "number"
+```
+正如你所看到的，使用Function的时候也可以省略new。
+Function()不仅不会把变量泄露到全局作用域，而且在其作用域链中除了全局作用域链再没有其他内容：
+```javascript
+// 全局命名空间
+var global = "round";
+(function(){
+    var global = "flat";
+    (new Function("return global;"))(); // "round"
+
+    eval("return global;"); // "flat"
+}());
+```
+**函数属性**
+我们已经了解过有关函数对象的所有属性和方法：
++ **length**
+期待的参数的数目。
++ **name**
+函数的名称，它不是ECMAScript标准的一部分。
++ **call()**
+执行传递单个参数的函数
++ **apply()**
+执行将所有参数当做数组传递的一个函数。
+
+一个示例：
+```javascript
+// 定义一个函数
+function sum(){
+    var res = 0;
+    for(var i=0;i<arguments.length;i++){
+        res += arguments[i];
+    }
+    return res;
+}
+
+// 测试属性
+sum.length; //0
+sum.name; // "sum"
+
+// 测试方法
+sum.call(null,1,2,3); // 6
+sum.apply(null,[1,2,3]); // 6
+```
+传递给call()和apply()的第一个参数，是要赋值给函数体中的this的对象。当你不关心this的时候，可以传递null。
+#### 5.4.5 String
+与new一起使用的时候，String()作为构造器函数，创建字符串对象。不使用new的时候，String()用做一个函数，将参数强制转换为原始类型的字符串。字符串对象和字符串原始类型是不同的，但是，你可以访问一个原始类型字符串（以及布尔和数字）的属性和方法，就好像它是一个对象一样。直接使用new String()的理由实在不多了。
+```javascript
+// 构造器函数，创建字符串对象
+var s = new String("hello");
+typeof s; // "object"
+
+// 没有new 它创建字符串原始类型
+var s = String("hello");
+typeof s; // "string"
+
+// 最好用做一个原始类型
+var s = "hello";
+typeof s; // "string"
+
+// 你也可以在原始类型上调用方法和属性
+s.length; // 5
+"hi".length; // 2
+
+// 但是不能给原始类型添加属性
+var sp = "primitive";
+sp.linke_caves = true;
+sp.length; //9
+sp.like_caves; // undefined
+```
+表5-1列出了String.prototype的基本的属性和方法，并于PHP函数进行比对。
+| JavaScript | PHP | Result |
+| ---- | ---- | ---- |
+| var s = "javascript" | $s = "javascript" | |
+| s.length | echo strlen($s) | 10 |
+| s.indexOf('a') | echo strpos($s,'a') | 1 |
+| s.lastIndexOf('a') | echo strrpos($s,'a') | 3 |
+| s.charAt(0) | echo $s[0] | "j" |
+| s.charCodeAt(0) | echo ord($s[0]) | 74 |
+| s.toLowerCase() | echo strtolower($s) | "javascript" |
+| s.toLocaleLowerCase() | | |
+| s.toUpperCase() | echo strtoupper($s) | "JAVASCRIPT" |
+| s.toLocaleUpperCase() | | |
+| s.concat(" rulz","!") | echo $s." rulz"."!" | "javascript rulz!" |
+这些是最简单的方法，现在，让我们来更详细地看看其他的方法。
+
+**substring()**
+有3个方法允许我们提取一段字符串：
+```javascript
+var s = "JavaScript";
+s.slice(4,7); // "Scr"
+s.substring(4,7); // "Scr"
+s.substr(4,3); // "Scr"
+```
+前两个方法是slice()和substring()，它们类似于PHP的substr()，只不过它们接受一个开始索引和一个结束索引，而不是开始索引和长度。JavaScript中非标准的substr()则接受开始索引和长度，所以，它就像PHP中的substr()一样。
+
+**localeCompare()**
+String.prototype.localeCompare()就像是PHP的strcmp()。它允许你根据字符串的排序方式比较字符串：
+```javascript
+"JavaScript".localeCompare("Java") > 0; // true
+```
+如果两个字符串相等，它返回0；如果参数较小的话，它返回一个正的整数（这意味着参数将会排序在最初的字符串之前）；否则的话，返回一个负数。
+```javascript
+"JavaScript".localeCompare("JavaScipz") < 0; // true
+```
 
