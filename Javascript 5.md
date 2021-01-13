@@ -138,7 +138,7 @@ Math.min(3,5); // 3
 Math.E; // 2.718281828459045
 ```
 + JSON
-> 这也不是一个构造器函数，而是包含了用于JSON字符串编码/解码的方法的一个对象。它是ECMAScript 5新添加的内容，并且，你将会在第6章中督导其更多内容。
+> 这也不是一个构造器函数，而是包含了用于JSON字符串编码/解码的方法的一个对象。它是ECMAScript 5新添加的内容，并且，你将会在第6章中读到其更多内容。
 
 让我们来更详细地看看所有这些构造器。
 #### 5.4.1 Object
@@ -195,7 +195,7 @@ if('length' in array_like){}
 ```javascript
 if(array_like.hasOwnPrototype('o')){}
 ```
-或者是一种类似的“鸭子类型”模式，如果恰巧array_like对象拥有相同的属性，你可会得到一个错误的肯定。鸭子类型意味着根据一些期望的属性来猜测类型。真如那句俗话说的，“如果它像一只鸭子一样走路和鸣叫，那么，它必然是一只鸭子”。
+或者是一种类似的“鸭子类型”模式，如果恰巧array_like对象拥有相同的属性，你可会得到一个错误的肯定。鸭子类型意味着根据一些期望的属性来猜测类型。正如那句俗话说的，“如果它像一只鸭子一样走路和鸣叫，那么，它必然是一只鸭子”。
 另一种选择是使用instanceof运算符。这在大多数情况下有效，但是，当设计iframe的时候，会在IE中引起混淆：
 ```javascript
 a instanceof Array; // true
@@ -388,7 +388,7 @@ a[99] = undefined;
 98 in a; // false
 a.length; // 100
 ```
-注意使用PHP的区别。在PHP中实现前面的代码，会得到5个元素，并且不糊改变count($a)所返回的值：
+注意使用PHP的区别。在PHP中实现前面的代码，会得到5个元素，并且不会改变count($a)所返回的值：
 ```php
 // PHP
 $a = array(1,2,3,4);
@@ -503,10 +503,10 @@ nums.toString(); // "1,2,9,10,11"
 ```
 正如你所看到的，这个回调函数就像是我们在PHP中传递给unsort()的回调函数一样工作。它返回：
 + 如果传递给它的两个元素相等的话，返回0。
-+ 如果认为第一个参数大约第二个参数，将会返回一个正数。
++ 如果认为第一个参数于第二个参数，将会返回一个正数。
 + 如果认为第一个参数小于第二个参数，将会返回一个负数。
 
-那么，如何对一个数组进行混排或者随机排序呢？PHP有array_shuffle()，但是在JavaScript中没有对等的函数。由于随机排序可以看做是以任意的顺序排序，这意味着，你可以提供一个返回随即结果的回调函数。Math.random()返回0-1之间的一个随机数，但是，你也会需要负数。因此，可以用0.5减去这个随机数，从而各有50%的概率得到一个正数或负数作为结果：
+那么，如何对一个数组进行混排或者随机排序呢？PHP有array_shuffle()，但是在JavaScript中没有对等的函数。由于随机排序可以看做是以任意的顺序排序，这意味着，你可以提供一个返回随机结果的回调函数。Math.random()返回0-1之间的一个随机数，但是，你也会需要负数。因此，可以用0.5减去这个随机数，从而各有50%的概率得到一个正数或负数作为结果：
 ```javascript
 var nums = [1,2,9,10,11];
 nums.sort(function(a,b){
@@ -526,7 +526,7 @@ b.toString();// "two,and,three"
 **注意：** Array.prototype.slice()类似于PHP的array_slice()，但是又并不完全相同，因为PHP的array_slice()接受一个开始索引和一个长度，而不是一个结束索引。
 
 ---
-如果在调用slice()的时候忽略了第二个参数，它默认第使用length:
+如果在调用slice()的时候忽略了第二个参数，它默认地使用length:
 ```javascript
 var a = ['one','and','two','and','three','and','four'];
 var b = a.slice(2);
@@ -574,13 +574,13 @@ var input = ["red","green","blue","yellow","purple"];
 [1,2,3].reverse().toString();// "3,2,1"
 ```
 **join()**
-Array.prototype.join()类似于PHP的implode()。它返回数组的元素祖成一个字符串。默认的分隔符是逗号：
+Array.prototype.join()类似于PHP的implode()。它返回数组的元素组成一个字符串。默认的分隔符是逗号：
 ```javascript
 [5,4,3].join(" > "); // "5 > 4 > 3"
 [5,4,3].join(); // "5,4,3" same as toString()
 [5,4,3].join(''); // "543"
 ```
-在PHP中，与implode()相反的函数时explode()；在JavaScript中，Array.prototype.join()的相反函数是String.prototype.split()，我们还将会介绍它。
+在PHP中，与implode()相反的函数是explode()；在JavaScript中，Array.prototype.join()的相反函数是String.prototype.split()，我们还将会介绍它。
 目前，对于数组的介绍就到此为止。接下来，让我们看看正则表达式。
 #### 5.4.3 RegExp
 RegExp构造器函数创建正则表达式对象。它可以和new一起使用，也可以不使用new。它还有一种替代语法，就是使用一个正则表达式直接量：
@@ -603,7 +603,7 @@ var b = gimme();
 a === b; // false.但是在ES3中为真
 ```
 ---
-我们可以指定3种regex限定符种的任意一种：
+我们可以指定3种regex限定符中的任意一种：
 + global（使用g），匹配所有出现，而不只是第一次出现。
 + multiline（使用m）。
 + ignoreCase（i）。
@@ -633,7 +633,7 @@ re.ignoreCase; // 是否设置了 i 标识
 ```
 **exec()**
 当你使用re.exec()的时候，返回值是一个数组，其中包括所有的匹配以及另外两个属性：input和index，这两个属性分别是要匹配的输入字符串，以及匹配的索引。
-我们来更详细第看一个例子：
+我们来更详细地看一个例子：
 ```javascript
 var re = /([dn])(o+)/;
 var result = re.exec("doodle noodle");
@@ -648,7 +648,7 @@ result.index; // 0
 ```javascript
 var re = /(dn)(o+)/g;
 ```
-然后，在一个循环中调用exec()并获得下一个匹配。在每次匹配中，都使用匹配结束的索引字符来更新re.lastIndex属性。当re.exec()返回null（这也再次导致re.lastIndex变为0），就告诉你不在有其他匹配：
+然后，在一个循环中调用exec()并获得下一个匹配。在每次匹配中，都使用匹配结束的索引字符来更新re.lastIndex属性。当re.exec()返回null（这也再次导致re.lastIndex变为0），就告诉你不再有其他匹配：
 ```javascript
 var re = /(dn)(o+)/g;
 var str = "doodle noodle";
@@ -734,7 +734,7 @@ sum.apply(null,[1,2,3]); // 6
 ```
 传递给call()和apply()的第一个参数，是要赋值给函数体中的this的对象。当你不关心this的时候，可以传递null。
 #### 5.4.5 String
-与new一起使用的时候，String()作为构造器函数，创建字符串对象。不使用new的时候，String()用做一个函数，将参数强制转换为原始类型的字符串。字符串对象和字符串原始类型是不同的，但是，你可以访问一个原始类型字符串（以及布尔和数字）的属性和方法，就好像它是一个对象一样。直接使用new String()的理由实在不多了。
+与new一起使用的时候，String()作为构造器函数，创建字符串对象。不使用new的时候，String()用作一个函数，将参数强制转换为原始类型的字符串。字符串对象和字符串原始类型是不同的，但是，你可以访问一个原始类型字符串（以及布尔和数字）的属性和方法，就好像它是一个对象一样。直接使用new String()的理由实在不多了。
 ```javascript
 // 构造器函数，创建字符串对象
 var s = new String("hello");
@@ -838,7 +838,7 @@ PHP拥有str_replace()，而JavaScript则有String.prototype.replace()，二者�
 ```javascript
 "JavaScript".replace("a","@"); // "J@vaScript"
 ```
-这是常见的错误原因。即便你只是像要替换第一次出现，也总是使用正则表达式"needle"来搜索，这是一个好习惯。
+这是常见的错误原因。即便你只是想要替换第一次出现，也总是使用正则表达式"needle"来搜索，这是一个好习惯。
 其次，replace()不会像是PHP代码那样接受数组作为输入，因此，我们必须将方法调用链接起来：
 ```PHP
 // PHP
@@ -1066,9 +1066,10 @@ d.toLocaleDateString(); // "1/1/1970"
 
 d.toTimeString(); // "08:00:00 GMT+0800 (China Standard Time)"
 d.toLocaleTimeString(); // "8:00:00 AM"
-
 ```
+
 将一个date对象强制转型为一个数字（例如，使用number()或算术运算），会得到UNIX时间戳，就像getTime()所得到的结果一样。
+
 ```javascript
 var d = new Date();
 Number(d) === d.getTime(); // true
