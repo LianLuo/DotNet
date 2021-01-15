@@ -138,7 +138,7 @@ Math.min(3,5); // 3
 Math.E; // 2.718281828459045
 ```
 + JSON
-> 这也不是一个构造器函数，而是包含了用于JSON字符串编码/解码的方法的一个对象。它是ECMAScript 5新添加的内容，并且，你将会在第6章中督导其更多内容。
+> 这也不是一个构造器函数，而是包含了用于JSON字符串编码/解码的方法的一个对象。它是ECMAScript 5新添加的内容，并且，你将会在第6章中读到其更多内容。
 
 让我们来更详细地看看所有这些构造器。
 #### 5.4.1 Object
@@ -195,7 +195,7 @@ if('length' in array_like){}
 ```javascript
 if(array_like.hasOwnPrototype('o')){}
 ```
-或者是一种类似的“鸭子类型”模式，如果恰巧array_like对象拥有相同的属性，你可会得到一个错误的肯定。鸭子类型意味着根据一些期望的属性来猜测类型。真如那句俗话说的，“如果它像一只鸭子一样走路和鸣叫，那么，它必然是一只鸭子”。
+或者是一种类似的“鸭子类型”模式，如果恰巧array_like对象拥有相同的属性，你可会得到一个错误的肯定。鸭子类型意味着根据一些期望的属性来猜测类型。正如那句俗话说的，“如果它像一只鸭子一样走路和鸣叫，那么，它必然是一只鸭子”。
 另一种选择是使用instanceof运算符。这在大多数情况下有效，但是，当设计iframe的时候，会在IE中引起混淆：
 ```javascript
 a instanceof Array; // true
@@ -388,7 +388,7 @@ a[99] = undefined;
 98 in a; // false
 a.length; // 100
 ```
-注意使用PHP的区别。在PHP中实现前面的代码，会得到5个元素，并且不糊改变count($a)所返回的值：
+注意使用PHP的区别。在PHP中实现前面的代码，会得到5个元素，并且不会改变count($a)所返回的值：
 ```php
 // PHP
 $a = array(1,2,3,4);
@@ -503,10 +503,10 @@ nums.toString(); // "1,2,9,10,11"
 ```
 正如你所看到的，这个回调函数就像是我们在PHP中传递给unsort()的回调函数一样工作。它返回：
 + 如果传递给它的两个元素相等的话，返回0。
-+ 如果认为第一个参数大约第二个参数，将会返回一个正数。
++ 如果认为第一个参数于第二个参数，将会返回一个正数。
 + 如果认为第一个参数小于第二个参数，将会返回一个负数。
 
-那么，如何对一个数组进行混排或者随机排序呢？PHP有array_shuffle()，但是在JavaScript中没有对等的函数。由于随机排序可以看做是以任意的顺序排序，这意味着，你可以提供一个返回随即结果的回调函数。Math.random()返回0-1之间的一个随机数，但是，你也会需要负数。因此，可以用0.5减去这个随机数，从而各有50%的概率得到一个正数或负数作为结果：
+那么，如何对一个数组进行混排或者随机排序呢？PHP有array_shuffle()，但是在JavaScript中没有对等的函数。由于随机排序可以看做是以任意的顺序排序，这意味着，你可以提供一个返回随机结果的回调函数。Math.random()返回0-1之间的一个随机数，但是，你也会需要负数。因此，可以用0.5减去这个随机数，从而各有50%的概率得到一个正数或负数作为结果：
 ```javascript
 var nums = [1,2,9,10,11];
 nums.sort(function(a,b){
@@ -526,7 +526,7 @@ b.toString();// "two,and,three"
 **注意：** Array.prototype.slice()类似于PHP的array_slice()，但是又并不完全相同，因为PHP的array_slice()接受一个开始索引和一个长度，而不是一个结束索引。
 
 ---
-如果在调用slice()的时候忽略了第二个参数，它默认第使用length:
+如果在调用slice()的时候忽略了第二个参数，它默认地使用length:
 ```javascript
 var a = ['one','and','two','and','three','and','four'];
 var b = a.slice(2);
@@ -574,13 +574,13 @@ var input = ["red","green","blue","yellow","purple"];
 [1,2,3].reverse().toString();// "3,2,1"
 ```
 **join()**
-Array.prototype.join()类似于PHP的implode()。它返回数组的元素祖成一个字符串。默认的分隔符是逗号：
+Array.prototype.join()类似于PHP的implode()。它返回数组的元素组成一个字符串。默认的分隔符是逗号：
 ```javascript
 [5,4,3].join(" > "); // "5 > 4 > 3"
 [5,4,3].join(); // "5,4,3" same as toString()
 [5,4,3].join(''); // "543"
 ```
-在PHP中，与implode()相反的函数时explode()；在JavaScript中，Array.prototype.join()的相反函数是String.prototype.split()，我们还将会介绍它。
+在PHP中，与implode()相反的函数是explode()；在JavaScript中，Array.prototype.join()的相反函数是String.prototype.split()，我们还将会介绍它。
 目前，对于数组的介绍就到此为止。接下来，让我们看看正则表达式。
 #### 5.4.3 RegExp
 RegExp构造器函数创建正则表达式对象。它可以和new一起使用，也可以不使用new。它还有一种替代语法，就是使用一个正则表达式直接量：
@@ -603,7 +603,7 @@ var b = gimme();
 a === b; // false.但是在ES3中为真
 ```
 ---
-我们可以指定3种regex限定符种的任意一种：
+我们可以指定3种regex限定符中的任意一种：
 + global（使用g），匹配所有出现，而不只是第一次出现。
 + multiline（使用m）。
 + ignoreCase（i）。
@@ -633,7 +633,7 @@ re.ignoreCase; // 是否设置了 i 标识
 ```
 **exec()**
 当你使用re.exec()的时候，返回值是一个数组，其中包括所有的匹配以及另外两个属性：input和index，这两个属性分别是要匹配的输入字符串，以及匹配的索引。
-我们来更详细第看一个例子：
+我们来更详细地看一个例子：
 ```javascript
 var re = /([dn])(o+)/;
 var result = re.exec("doodle noodle");
@@ -648,7 +648,7 @@ result.index; // 0
 ```javascript
 var re = /(dn)(o+)/g;
 ```
-然后，在一个循环中调用exec()并获得下一个匹配。在每次匹配中，都使用匹配结束的索引字符来更新re.lastIndex属性。当re.exec()返回null（这也再次导致re.lastIndex变为0），就告诉你不在有其他匹配：
+然后，在一个循环中调用exec()并获得下一个匹配。在每次匹配中，都使用匹配结束的索引字符来更新re.lastIndex属性。当re.exec()返回null（这也再次导致re.lastIndex变为0），就告诉你不再有其他匹配：
 ```javascript
 var re = /(dn)(o+)/g;
 var str = "doodle noodle";
@@ -734,7 +734,7 @@ sum.apply(null,[1,2,3]); // 6
 ```
 传递给call()和apply()的第一个参数，是要赋值给函数体中的this的对象。当你不关心this的时候，可以传递null。
 #### 5.4.5 String
-与new一起使用的时候，String()作为构造器函数，创建字符串对象。不使用new的时候，String()用做一个函数，将参数强制转换为原始类型的字符串。字符串对象和字符串原始类型是不同的，但是，你可以访问一个原始类型字符串（以及布尔和数字）的属性和方法，就好像它是一个对象一样。直接使用new String()的理由实在不多了。
+与new一起使用的时候，String()作为构造器函数，创建字符串对象。不使用new的时候，String()用作一个函数，将参数强制转换为原始类型的字符串。字符串对象和字符串原始类型是不同的，但是，你可以访问一个原始类型字符串（以及布尔和数字）的属性和方法，就好像它是一个对象一样。直接使用new String()的理由实在不多了。
 ```javascript
 // 构造器函数，创建字符串对象
 var s = new String("hello");
@@ -793,4 +793,311 @@ String.prototype.localeCompare()就像是PHP的strcmp()。它允许你根据字�
 ```javascript
 "JavaScript".localeCompare("JavaScipz") < 0; // true
 ```
+**split()**
+String.prototype.split()类似于PHP的explode()。它根据一个分隔符字符串，将字符串分割到一个数组中：
+```javascript
+'a,b,c'.split(','); // ["a","b","c"]
+```
+它还允许分隔符是一个正则表达式；
+```javascript
+var s = "JavaScript";
+s.split(/a/); // ["J","v","Script"]
+```
+正则表达式可以帮助你解析随意分割的CSV（Common-separated values，逗号分隔开的值）数据。例如：
+```javascript
+"a, b, c".split(/\s*,\s*/); // ["a","b","c"]
+```
+**search()**
+正如其名称所示，String.prototype.search()在一个字符串中查找一个字符串的存在。它在功能上类似于PHP的strstr()，但是，它在实现上接近于PHP的strpos()：
+```javascript
+var s = "JavaScript";
+s.search(/ava/); // 1
+s.search("Java"); // 0
+```
+这里需要指出两点：
++ 可以使用一个正则表达式或一个字符串来搜索。
++ 要注意为0的结果，这是在索引0的一个匹配；如果没有找到匹配的话，将会得到-1：
+```javascript
+// 糟糕
+if(!s.search("Java")){
+    // 错误的否定，将执行这里
+    alert("not found");
+}
+// 较好
+if(s.search("Java") === -1){
+    alert("not found")
+}
+```
+**replace()**
+PHP拥有str_replace()，而JavaScript则有String.prototype.replace()，二者都是用来查找替换字符串的内容。然而，它们的工作方式有很大不同。
+首先，replace()接受要查找的一个正则表达式：
+```javascript
+"JavaScript".replace(/a/g, "@"); // "J@v@Script"
+```
+如果只是传递一个字符串，其内容会用作一个正则表达式的模式。但是，由于在这个例子中，我们无法设置正则表达式模式的g模式，因此，只有一次出现被替换了：
+```javascript
+"JavaScript".replace("a","@"); // "J@vaScript"
+```
+这是常见的错误原因。即便你只是想要替换第一次出现，也总是使用正则表达式"needle"来搜索，这是一个好习惯。
+其次，replace()不会像是PHP代码那样接受数组作为输入，因此，我们必须将方法调用链接起来：
+```PHP
+// PHP
+$s = "JavaScript";
+$s = str_repace(array("a","S"),array("@","$"),$s);
+echo $s; // "J@v@$script"
+```
+```javascript
+// javascript
+var s = "JavaScript";
+s = s.replace("a","@").replace("S","$");
+s; // "J@v@$script"
+```
+最后，replace()可以接受一个回调函数，而不是一个直接量字符串做替换。匹配，匹配的索引，以及最初的输入字符串，作为参数传递给回调函数，并且回调可以根据匹配进行有意义的或带条件的替换。
+如下的示例会使用HTML实体代码来替换大小写字母：
+```javascript
+var ents = "JavaScript".replace(/[a-z]/g,function(match,index,input){
+    // `match` 是a，然后是v，接着是a，以此类推
+    // `index` 是match的索引:1,2,3,4,5,6...
+    // `input` 是"JavaScript"
+    return "&#".concat(match.charCodeAt(0),";");
+});
+ents;// "J&#97;&#118;&#97;S&#99;&#114;&#105;&#112;&#116;"
+```
+**match()**
+String.prototype.match()匹配一个正则表达式模式，类似于PHP的preg_match()和preg_match_all()：
+```php
+// PHP
+$s = "JavaScript";
+preg_match("/[A-Z]/",$s, $matches);
+preg_match_all("/[A-Z]/",$s, $matches_all);
+print_r($matches); // matches J
+print_r($matches_all); // mathes J和S
+```
+```javascript
+// JavaSCript
+var s = "JavaScript";
+s.match(/A-Z/); // ["J"]
+s.match(/[A-Z]/g); // ["J","S"]
+```
+当该正则表达式没有使用全局g修饰符的时候，该方法和正则表达式对象的exec()方法的工作方式相同：
+```javascript
+"string".match(/[a-z]/); // ["s"]
+/[a-z]/.exec("string"); // ["s"]
+```
+当没有找到匹配的时候，你将会得到null，而不是一个空数组：
+```javascript
+"string".match(/[0-9]/); // null
+/[0-9]/.exec("string"); // null
+```
+#### 5.4.6 Number
+Number()构造器函数包装了原始数字类型。它可以用来将字符串转换为数字：
+```javascript
+Number("1.1"); // 1.1
+```
+它比parseInt()或parseFloat()更加严格些：
+```javascript
+Number("3,14"); // NaN
+parseInt("3,14",10); // 3
+parseFloat("3,14",10); // 3
+```
+和String()一样，new Number()创建数字对象，而不使用new的时候，Number()返回原始类型数字：
+```javascript
+typeof Number("1.1"); // "number"
+typeof new Number("1.1"); // "object"
+```
+有如下几个常量，定义为Number()函数的属性：
+```javascript
+Number.MAX_VALUE; // 1.7976931348623157e+308
+Number.MIN_VALUE; // 5e-324
+Number.POSITIVE_INFINITY; // Infinity
+Number.NEGATIVE_INFINITY; // -Infinity
+Number.NaN; // NaN
+```
+最后，还有Number.prorotype的三个方法：
+```javascript
+Number(123).toFixed(2); // 123.00
+(1000000000000).toExponential(); // "1e+12"
+(1000000000000).toPrecision(3); // "1.00e+12"
+```
+#### 5.4.7 Boolean
+在3个原始类型包装器构造器中，Boolean()是用途最少的一个。它没有其他的属性或方法。它也可能会造成混淆，new Boolean()返回一个对象，而所有的对象都为真。
+```javascript
+!!new Boolean(true); // true
+!!new Boolean(false); // true
+```
+#### 5.4.8 Math
+Math不是一个构造器，而是一个对象（全局对象的一个属性），它用作一个命令空间，以包含有用的常量和方法。
+有如下一些常量：
+```javascript
+Math.E; // 2.718281828459045
+Math.LN2; // 0.6931471805599453
+Math.LN10; // 2.302585092994046
+Math.LOG2E; // 1.4426950408889634
+Math.LOG10E; // 0.4342944819032518
+Math.PI; // 3.141592653589793
+Math.SQRT1_2; // 0.7071067811865476
+Math.SQRT2; // 1.4142135623730951
+```
+而大多数方法的作用也是一目了然：
+```javascript
+// 舍入
+Math.round(5.6); // 6
+Math.floor(5.6); // 5
+Math.ceil(5.1); // 5
 
+// 几何
+Math.sin();
+Math.cos();
+Math.tan();
+Math.asin();
+Math.acos();
+Math.atan();
+Math.atan2();
+
+// min/max
+Math.max(1,2,3,-1); // 3
+Math.min(1,2,3,-1); // -1
+
+// 平方和开方
+Math.sqrt(49); // 7
+Math.pow(7,2); // 49
+
+// 0和1之间随机数
+Math.random(); // 0.8354906368561055
+
+// log/exp
+Math.exp();
+Math.log();
+```
+#### 5.4.9 Error
+你可以使用new Error()或者任何其他的错误构造器函数来抛出自己的错误。这些对象只有两个标准的跨浏览器属性可供使用，这就是name和message。
+name属性包含了构造器的名称（作为一个字符串），例如，“Error”，“ReferenceError”等。
+你也可以忘掉有关内建错误构造器函数的一切，并且抛出你自己的对象：
+```javascript
+if(2+2 > 4){
+    throw{
+        name:'CrazyError',
+        message:"It's the end of the world as we know it"
+    }
+}
+```
+为了完整起见，这里给出其他的错误构造器函数：
++ EvalError
++ RangeError
++ ReferenceError
++ SyntaxError
++ TypeError
++ URIError
+
+#### 5.4.10 Date
+Date()创建date对象：
+```javascript
+var d = new Date(2021,1,13); // Januray 13, 2021
+```
+你也可以指定可选的小时，分钟，秒钟和毫秒：
+```javascript
+new Date(2021,12,30,23,59,59,999); // 2021年前的一毫秒
+```
+此外，你可以从一个时间戳或一个字符串创建一个date对象
+```javascript
+new Date(0); // Dec 31, 1969
+new Date("December 31, 1969");
+```
+传递一个字符串类似于有意使用PHP的strtime()，尽管没有该函数功能强大。有两个方法作为构造器Date()的属性：
++ parse()
++ UTC()
+parse()等同于给new Date()传递一个字符串，只不过它返回一个时间戳，而不是一个对象。Date.UTC()就像是带有一个长长参数列表（年，月以及可选的日期，小时，分钟，秒钟和毫秒）的Date()构造器。只不过UTC()返回通用时间格式的一个时间戳，而不是本地时间的一个对象。
+Date.prototype上有很多方法。它们的作用一目了然，因此，这里不会详细介绍它们。完整的列表如下所示：
+```javascript
+var d = new Date(0); // Dec 31, 1969, 本地时间
+// 我的计算机上本地时间是GMT
+// 标识比UTC先前的8个小时（480分钟）
+d.getTimezoneOffset(); // -480;
+
+// get/set date
+d.setYear(2020); // 1577836800000
+d.getYear(); // 120, year counted from 1900
+
+d.setFullYear(2020); // 1577836800000
+d.setUTCFullYear(2020); // 1577836800000
+d.getFullYear(); // 2020
+d.getUTCFullYear(); // 2020
+
+d.setMonth(11); // 1606780800000
+d.setUTCMonth(11); // 1606780800000
+d.getMonth(); // 11, Dec
+d.getUTCMonth(); // 11 December
+
+// Wed Jan 13 2021 21:51:36 GMT+0800"
+d.getDay(); // 3
+d.getUTCDay(); // 3
+d.setHours(0); // 1610470296291
+d.setUTCHours(0); //1610412696291
+d.getHours(); // 24-(-8) = 8
+d.getUTCHours(); // 0
+
+d.setMinutes(30); // 1610411436291
+d.setUTCMinutes(30); // 1610411436291
+d.getMinutes(); // 30
+d.getUTCMinutes(); // 30
+
+d.setSeconds(30); // 1610411430291
+d.setUTCSeconds(30); // 1610411430291
+d.getSeconds(); // 30
+d.getUTCSeconds(); // 30
+
+
+d.setMilliseconds(1000); // 1610411431000
+d.setUTCMilliseconds(1000); // 1610411432000
+d.getMilliseconds(0); 
+d.getUTCMilliseconds(0);
+
+d.setTime(0); // Unix时间戳
+d.getTime(); // 0
+
+// 各种toString变体
+d.toString(); // "Thu Jan 01 1970 08:00:00 GMT+0800 (China Standard Time)"
+d.toLocaleString(); // "1/1/1970, 8:00:00 AM"
+d.toUTCString(); // "Thu, 01 Jan 1970 00:00:00 GMT"
+d.toGMTString(); // "Thu, 01 Jan 1970 00:00:00 GMT"
+
+d.toDateString(); // "Thu Jan 01 1970"
+d.toLocaleDateString(); // "1/1/1970"
+
+d.toTimeString(); // "08:00:00 GMT+0800 (China Standard Time)"
+d.toLocaleTimeString(); // "8:00:00 AM"
+```
+
+将一个date对象强制转型为一个数字（例如，使用number()或算术运算），会得到UNIX时间戳，就像getTime()所得到的结果一样。
+
+```javascript
+var d = new Date();
+Number(d) === d.getTime(); // true
+new Date().getTime() === +new Date(); // true
+```
+
+### 5.5 构造器概述
+到目前为止，你已经看到过了JavaScript的构造器，以及它们的属性和它们的原始的属性。对于它们中的大多数来说，直接将其用做构造器的意义并不大，因为还有一种较短的直接量的版本要更好。
+如下是一个快速概览列表：
++ Object()
+> 使用对象直接量{}替代更好。
++ Array()
+> 使用直接量[]替代。
++ RegExp()
+> 当模式是静态的时候，使用直接量/[a-z]/。
++ Function()
+> 使用函数声明或者函数表达式。
++ String()
+> 只是定义一个常规的原始类型的“string”，并且只有在强制类型转换的时候才使用这个构造器。
++ Number()
+> 只用于强制类型转换；否则，将数字定义为原始类型要更好。
++ Error()
+> 只是抛出你自己的错误（例如，SyntaxError()等）。
++ Boolean()
+> 无用，直接使用true和false。
++ Date()
+> 唯一且必须用它获取对象的构造器函数。
++ Math
+> 不是一个构造器，但是对于数学常量和静态方法来说是一个有用的命名空间。
++ JSON
+> 也不是一个构造器，我们将在第6章再次见到它，那时候，它作为一个全局对象出现。
