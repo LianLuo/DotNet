@@ -595,9 +595,157 @@ mySingle.say();// "Hi"
 ```
 #### 7.8.2 工厂
 工厂方法模式允许你将对象的创建延迟到更加具体的子类/构造器。这允许你在运行时确定使用哪个类/构造器来创建一个对象。通常，我们将一个字符串传递给静态的factory()或build()方法，并且，该方法负责找到要实例化的正确类。在PHP中，我们通常为类的命名空间使用一个前缀，或者，在新版中，我们使用一个真实的命名空间。例如：
-```javascript
+```php
+ // PHP
+ class Polygon_Triangle{}
+ class Polygon_Square{}
+ class Polygon_Cirle{}
+
+ // factory pattern
+ class Ploygon{
+     static function factory($name){
+         $class = "Ploygon_".ucfirst(strolower($name));
+         if(class_exists($class)){
+             return new $class;
+         }
+         throw new Exception($class." doesn't exist");
+     }
+ }
+
+ // used
+ $tri = Polygon::factory('triangle');
+ echo get_class($tri); // "Polygon_Triangle"
+
+ // throw exception
+ $rect = Polygon::factory('rectangle');
 ```
+这里最为重要的部分是<code>return new $class;</code>。PHP允许你创建类的实例，而该类是提前所不知道的。在另一种语言中，你可能需要有一条常常的switch语句来列出所有的已知的类。
+在JavaScript中，你可以让Polygon成为一个对象并使用它作为一个命名空间，以及保存静态的factory()方法的地方：
+```javascript
+// JavaScript
+var Polygon = {
+    factory:function(name){
+        var constr = name.charAt(0).toUpperCase()+name.slice(1).toLowerCase();
+        if(Polygon[constr]){
+            return new Polygon[constr];
+        }
+        throw new Error("Polygon."+name+" doesn't exist");
+    }
+};
+
+// implement
+Polygon.Triangle = function(){};
+Polygon.Square = function(){};
+Polygon.Circle = function(){};
+
+// used
+var tri = Polygon.factory('triangle');
+tri instanceof Polygon.Triangle; // true
+
+new Polygon.factory('Rectangle'); // Error: Polygon.Rectangle doesn't exist
+```
+这里没有特殊的技巧或语法，只是使用方括号表示法来直接访问一个属性。由于你知道这个属性是一个构造器函数，你可以直接<code>new Polygon[constr]</code>来返回一个新对象。
 #### 7.8.3 装饰者
+装饰器模式允许你在运行时增加一个对象的功能，同时保留接口。这也是继承的另一种替代方式。
+假设你需要由一个Text()构造器创建的某些文本处理对象，以处理用户输入：
+```javascript
+function Text(txt){
+    this.input = txt;
+}
+
+Text.prototype.get = function(){
+    return this.input;
+}
+```
+使用这个构造器很简单：
+```javascript
+var my = new Text('Hello,_world_!wassup');
+my.get(); // 'Hello,_world_!wassup'
+```
+返回的文本看上去不是很漂亮。这应该使用一些装饰。
+
+**装饰API**
+装饰API看上去如下所示：
+```javascript
+my.decorate("punctuation");
+my.decorate("italics"); // Turn _ into <i>
+my.get(); // "Hello,<i>world</i>! wassup? "
+```
+使用该装饰器，程序可以在任何时候确定哪个装饰器适用于给定的任务，并且用额外的功能来增强对象my。此外，装饰的顺序也可能很重要（例如，转义HTML的装饰器因该在添加HTML标签的\<i\>之前运行）。
+实际上，你的程序将装饰器一个接一个地链了起来。因此，每个装饰器应该操作链条中的前一个装饰器的结果。
+
+**添加装饰器**
+让我们使用Text()作为一个命名空间，并且在哪里添加所有的装饰器：
+```javascript
+Text.decorators = {};
+```
+第一个装饰器在标点之后添加漏掉的空格
+```javascript
+Text.decorators.punctuation = {
+    get:function(text){
+        return text.replace(/([;.!\?])\s*/g,'$1 ');
+    }
+};
+```
+这里，我们有一个punctuation对象，它带有一个单个的方法。这个方法接收调用链条中在其之前的装饰器的输出，并进一步修改文本。
+对于italics对象来说，也是一样的：
+```javascript
+Text.decorators.italics ={
+    get:function(text){
+        return text.replace(/(_)(.*?)(_)?/g,'<i>$2</i>');
+    }
+};
+```
+最后是escape对象：
+```javascript
+Text.decorators.escape = {
+    get:function(text){
+        return text.replace(/&/g,'&amp;').
+            replace(/</g,'&lt;').
+            replace(/>/g,'&gt;');
+    }
+};
+```
+
+**decorate()和get()**
+既然该API很清楚并且已经有了装饰器，接下来应该看看decorate()方法。首先，我们需要对Text()构造器略作修改，以便它维护当前请求的装饰器的一个列表：
+```javascript
+function Text(txt){
+    this.input = txt;
+    this.decorators_list = [];
+}
+```
+decorate()方法实际上直接附加到所需的装饰器的列表之后：
+```javascript
+Text.prototype.decorate = function(decorator){
+    this.decorators_list.push(decorator);
+}
+```
+最智能化的部分隐藏在核心的get()方法中，该方法重写如下所示：
+```javascript
+Text.prototype.get = function(){
+    var txt = this.input;
+    var max = this.decorators_list.length;
+    var name;
+    for(var i=0;i< max;i++){
+        name = this.decorators_list[i];
+        txt = Text.decorators[name].get(txt);
+    }
+    return txt;
+}
+```
+正如你所看到的，该方法遍历所有请求的装饰器，并且调用每个装饰器的get()，传递之前的结果。
+更多的测试如下：
+```javascript
+my.input  = "_hi_,ho,_ho_";
+my.get(); // "<i>hi</i>,ho<i>ho</i>"
+```
+总是可以添加更多的装饰器：
+```javascript
+my.decorate('escape');
+my.get(); // "&lt;i&gt;hi&lt;/i&gt;,ho&lt;i&gt;ho&lt;/i&gt;"
+```
+这只是装饰器模式的一个实现示例。它没有使用任何继承，但是，我们通过另一种实现来建立了一个继承链，而不是一个调用链。
 ### 7.9 文档和测试
 #### 7.9.1 手册
 #### 7.9.2 为自己的代码编制文档
