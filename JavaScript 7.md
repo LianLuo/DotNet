@@ -747,7 +747,62 @@ my.get(); // "&lt;i&gt;hi&lt;/i&gt;,ho&lt;i&gt;ho&lt;/i&gt;"
 ```
 这只是装饰器模式的一个实现示例。它没有使用任何继承，但是，我们通过另一种实现来建立了一个继承链，而不是一个调用链。
 ### 7.9 文档和测试
+让我们讨论一下JavaScript中的文档和测试，作为本章节以及本书的结束。
 #### 7.9.1 手册
+PHP确实很强的一方面在于，它有很好的手册（[http://php.net/](http://php.net/)），特别是带有所有用户贡献的注释。而对JavaScript来说，这方面很不对等。然而，Mozilla Developer Network（MDN）还是有一个不错的在线资源（[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference?redirectlocale=en-US&redirectslug=JavaScript%2FReference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference?redirectlocale=en-US&redirectslug=JavaScript%2FReference)）可供你查询。即便它是关于Mozilla和Firefox的，但这里往往还有一些关于IE和其他浏览器所需的提示。
+关于特定于IE的内容，最好的资源是MSDN站点（[http://msdn.mircosoft.com/zh-cn/](http://msdn.mircosoft.com/zh-cn/)）。
+此外，你总是可以查询ECMA-262规范（[http://www.ecma-internaltional.org/publications/standards/Ecma-262.html](http://www.ecma-internaltional.org/publications/standards/Ecma-262.html)）。
 #### 7.9.2 为自己的代码编制文档
+如果你熟悉PHPDoc或者JavaDoc，你可以很高兴地了解到，在JavaScript中可以对内嵌式评论使用同样的思路：
+```javascript
+/**
+ * Sums two numbers
+ * 
+ * @param {a} First number
+ * @param {b} Second number
+ * @returns {Number} The sum
+ */
+function sum(a,b){
+    return a+b;
+}
+```
+有几种工具可以用来通过注释生成文档，这包括JSDoc ToolKit（[http://code.google.com/p/jsdoc-toolkit/](http://code.google.com/p/jsdoc-toolkit/)）和YUIDoc（[https://yuilibrary.com/projects/yuidoc](https://yuilibrary.com/projects/yuidoc)）在JavaScript中，有多种选择来执行具体任务（例如，继承），文档系统可能无法推导出一段代码的用途，因此，它通常会为你提供特殊的新标签，如@inherits,@class或@constructor，你可以用来声明自己的意图。
 #### 7.9.3 单元测试
+有几个项目可以帮助你对自己的JavaScript代码进行单元测试。一个例子式Jasmine（[http://privotal.github.io/jasmine/](http://privotal.github.io/jasmine/)），它式易于理解和使用的API。
+假设你想要对如下的构造器函数进行单元测试：
+```javascript
+function Text(txt){
+    this.input = txt;
+}
+
+Text.prototype.get = function(){
+    return this.input;
+};
+```
+单元测试文件应该如下所示：
+```javascript
+describe("Text",function(){
+    // 第一次测试
+    it('create objects',function(){
+        expect(new Text("wee").input).toBe("wee");
+    });
+
+    // 第二次测试
+    it('can get back the input',function(){
+        // setup
+        var t = new Text('hello');
+
+        // 多次断言
+        expect(t.get).toBeDefined();
+        expect(t.get).toBeUndefined();
+        expect(t.get()).toBe('hello');
+    });
+});
+```
+除了Jasmine，在进行单元测试的时候，我们还有更多的选择。
+如果要在浏览器中测试用户交互，可以使用Selenum（[http://seleniumhq.org/](http://seleniumhq.org/)）。
+还有一种工具叫做JSCoverage（[http://siliconforks.com/jscoverage/](http://siliconforks.com/jscoverage/)），在运行单元测试之前，可以使用它来实验代码，从而获知测试的代码覆盖。
 #### 7.9.4 JSlint
+JSLint（[http://jslint.com/](http://jslint.com/)）是这样一种工具，它可以检查代码的静态性以查看潜在的风险，甚至是像缩进和漏掉分号这样的简单错误。由于JavaScript不是编译性语言，很容易隐蔽一些错误，并且JSLint帮助你在代码出品前找到其中一些错误。
+JSLint已经植入到很多环境中了，并且可以作为很多IDE和文本编辑器的插件使用。你可以很容易地将其集成到你的文本编辑器中，并且可以对要保存的每个文件运行它，这使得你的代码的质量有了很强的信心。
+一些开发者认为JSLint过于严格和武断，但是，它有很多的选项，你可以进行调正并关闭你不认同的那些检查。还有一个类似的工具叫做JSHint（[http://jshint.com/](http://jshint.com/)）允许更加细致地控制要打开那些检查。还有一个检测器是JavaScript Lint（[http://www.javascripthint.com/](http://www.javascripthint.com/)），它基于Mozilla的SpiderMonkey JavaScript引擎。
