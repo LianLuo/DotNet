@@ -13,8 +13,9 @@ var my = (function(){
         bye: 2
     };
 }());
-```
+
 my.hi;// 2
+```
 咋一看，最终的结果和如下代码的结果没有区别：
 ```javascript
 var my = {
@@ -267,6 +268,7 @@ const PI = 3.14;
 + define()
 + defined()
 + constant()
+
 ```javascript
 var constant = (function(){
     var constants = {}, // 所有的常量在这里
@@ -749,7 +751,7 @@ my.get(); // "&lt;i&gt;hi&lt;/i&gt;,ho&lt;i&gt;ho&lt;/i&gt;"
 ### 7.9 文档和测试
 让我们讨论一下JavaScript中的文档和测试，作为本章节以及本书的结束。
 #### 7.9.1 手册
-PHP确实很强的一方面在于，它有很好的手册（[http://php.net/](http://php.net/)），特别是带有所有用户贡献的注释。而对JavaScript来说，这方面很不对等。然而，Mozilla Developer Network（MDN）还是有一个不错的在线资源（[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference?redirectlocale=en-US&redirectslug=JavaScript%2FReference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference?redirectlocale=en-US&redirectslug=JavaScript%2FReference)）可供你查询。即便它是关于Mozilla和Firefox的，但这里往往还有一些关于IE和其他浏览器所需的提示。
+PHP确实很强的一方面在于，它有很好的手册（[http://php.net/](http://php.net/)），特别是带有所有用户贡献的注释。而对JavaScript来说，这方面很不对等。然而，Mozilla Developer Network（MDN）还是有一个不错的在线资源（[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference?redirectlocale=en-US&redirectslug=JavaScript%2FReference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference?redirectlocale=en-US&redirectslug=JavaScript%2Reference)）可供你查询。即便它是关于Mozilla和Firefox的，但这里往往还有一些关于IE和其他浏览器所需的提示。
 关于特定于IE的内容，最好的资源是MSDN站点（[http://msdn.mircosoft.com/zh-cn/](http://msdn.mircosoft.com/zh-cn/)）。
 此外，你总是可以查询ECMA-262规范（[http://www.ecma-internaltional.org/publications/standards/Ecma-262.html](http://www.ecma-internaltional.org/publications/standards/Ecma-262.html)）。
 #### 7.9.2 为自己的代码编制文档
